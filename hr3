@@ -1,0 +1,1963 @@
+    public static void p(Object obj, String str) {
+        if (obj == null) {
+            O(str);
+        }
+    }
+	
+	package fv;
+
+    public a() {
+        setEndpoint(b.DDS_SETTINGS_CHECK.getEndpoint());
+        setHttpMethod(r9.b.POST);
+        setHasToken(Boolean.TRUE);
+        setShouldEncrypt(true);
+        setShouldDeviceInfo(false);
+    }
+
+package an2;
+
+import android.content.Context;
+import android.text.TextUtils;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import com.google.common.net.HttpHeaders;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+import com.santander.app.MinhaConta;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import m53.q0;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/* compiled from: SantanderConnectorHelper.java */
+/* loaded from: classes12.dex */
+public class g {
+
+    /* renamed from: l */
+    public static g f5119l;
+
+    /* renamed from: m */
+    public static final t9.a f5120m = new l();
+
+    /* renamed from: n */
+    public static final t9.a f5121n = new m();
+
+    /* renamed from: o */
+    public static final t9.a f5122o = new n();
+
+    /* renamed from: p */
+    public static final List<Integer> f5123p = new ArrayList(Arrays.asList(Integer.valueOf((int) oa0.b.f46947c), Integer.valueOf((int) oa0.b.f46949e), Integer.valueOf((int) oa0.b.f46951g), Integer.valueOf((int) oa0.b.f46953i), Integer.valueOf((int) oa0.b.f46955k), Integer.valueOf((int) oa0.b.f46957m), Integer.valueOf((int) oa0.b.f46959o)));
+
+    /* renamed from: q */
+    public static final q9.a f5124q = new o();
+
+    /* renamed from: r */
+    public static final s9.k f5125r = new s();
+
+    /* renamed from: s */
+    public static final s9.k f5126s = new a();
+
+    /* renamed from: t */
+    public static final q9.a f5127t = new b();
+
+    /* renamed from: a */
+    public String f5128a;
+
+    /* renamed from: b */
+    public z9.a f5129b;
+
+    /* renamed from: c */
+    public z9.a f5130c;
+
+    /* renamed from: d */
+    public z9.a f5131d;
+
+    /* renamed from: e */
+    public z9.a f5132e;
+
+    /* renamed from: f */
+    public z9.a f5133f;
+
+    /* renamed from: g */
+    public z9.a f5134g;
+
+    /* renamed from: h */
+    public q9.e f5135h = new C0083g();
+
+    /* renamed from: i */
+    public s9.a f5136i = new h();
+
+    /* renamed from: j */
+    public s9.q f5137j = new s9.q() { // from class: an2.f
+        @Override // s9.q
+        public final void a() {
+            g.b(g.this);
+        }
+    };
+
+    /* renamed from: k */
+    public s9.l f5138k = new s9.l() { // from class: an2.e
+        @Override // s9.l
+        public final void a(JSONObject jSONObject) {
+            g.a(jSONObject);
+        }
+    };
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class a implements s9.k {
+        @Override // s9.k
+        public String decrypt(String str) {
+            return t53.b.f().a(str);
+        }
+
+        @Override // s9.k
+        public String encrypt(JSONObject jSONObject) {
+            return t53.b.f().c(jSONObject.toString());
+        }
+
+        @Override // s9.k
+        public String encrypt(String str) {
+            return t53.b.f().c(str);
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class b implements q9.a {
+        @Override // q9.a
+        public String a() {
+            return ik2.a.f34419e;
+        }
+
+        @Override // q9.a
+        public String[] b() {
+            return (String[]) g.J().z().c().c().values().toArray(new String[0]);
+        }
+
+        @Override // q9.a
+        public String c() {
+            return s43.b.z0().p();
+        }
+
+        @Override // q9.a
+        public String d() {
+            String[] a14 = q0.a(MinhaConta.d());
+            return a14 != null ? a14[2] : "";
+        }
+
+        @Override // q9.a
+        public String e() {
+            return "35";
+        }
+
+        @Override // q9.a
+        public String f() {
+            return s43.b.z0().z();
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class c implements q9.f {
+        public c() {
+            g.this = r1;
+        }
+
+        @Override // q9.f
+        public s9.f a(@NonNull String str, @NonNull r9.b bVar, @Nullable JSONObject jSONObject, @NonNull String str2, boolean z14) {
+            return g.this.o(str, bVar, jSONObject, str2, z14);
+        }
+
+        @Override // q9.f
+        public s9.f b(@NonNull String str, @NonNull r9.b bVar, @Nullable JSONObject jSONObject, @NonNull JSONObject jSONObject2, boolean z14) {
+            return g.this.p(str, bVar, jSONObject, jSONObject2, z14);
+        }
+
+        @Override // q9.f
+        public JSONObject c() {
+            return g.this.F();
+        }
+
+        @Override // q9.f
+        public JSONObject getHeader() {
+            return g.this.E();
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class d implements q9.f {
+        public d() {
+            g.this = r1;
+        }
+
+        @Override // q9.f
+        public s9.f a(@NonNull String str, @NonNull r9.b bVar, @Nullable JSONObject jSONObject, @NonNull String str2, boolean z14) {
+            return g.this.o(str, bVar, jSONObject, str2, z14);
+        }
+
+        @Override // q9.f
+        public s9.f b(@NonNull String str, @NonNull r9.b bVar, @Nullable JSONObject jSONObject, @NonNull JSONObject jSONObject2, boolean z14) {
+            return g.this.p(str, bVar, jSONObject, jSONObject2, z14);
+        }
+
+        @Override // q9.f
+        public JSONObject c() {
+            return new JSONObject();
+        }
+
+        @Override // q9.f
+        public JSONObject getHeader() {
+            return g.this.C();
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class e implements nl.d {
+        public e() {
+            g.this = r1;
+        }
+
+        @Override // q9.a
+        public String a() {
+            return ik2.a.f34419e;
+        }
+
+        @Override // q9.a
+        public String[] b() {
+            return new String[0];
+        }
+
+        @Override // q9.a
+        public String c() {
+            return s43.b.z0().p();
+        }
+
+        @Override // q9.a
+        public String d() {
+            return g23.a.c(MinhaConta.d());
+        }
+
+        @Override // q9.a
+        public String e() {
+            return "35";
+        }
+
+        @Override // q9.a
+        public String f() {
+            return s43.b.z0().z();
+        }
+
+        @Override // nl.d
+        public s9.e getConnectorType() {
+            return s9.e.HUB;
+        }
+
+        @Override // nl.d
+        public r9.a getEnvironment() {
+            return s43.b.z0().getEnvironment();
+        }
+
+        @Override // nl.d
+        public r9.c getSystem() {
+            return r9.c.MBB;
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class f implements q9.f {
+        public f() {
+            g.this = r1;
+        }
+
+        @Override // q9.f
+        public s9.f a(@NonNull String str, @NonNull r9.b bVar, @Nullable JSONObject jSONObject, @NonNull String str2, boolean z14) {
+            return g.this.o(str, bVar, jSONObject, str2, z14);
+        }
+
+        @Override // q9.f
+        public s9.f b(@NonNull String str, @NonNull r9.b bVar, @Nullable JSONObject jSONObject, @NonNull JSONObject jSONObject2, boolean z14) {
+            return g.this.p(str, bVar, jSONObject, jSONObject2, z14);
+        }
+
+        @Override // q9.f
+        public JSONObject c() {
+            return new JSONObject();
+        }
+
+        @Override // q9.f
+        public JSONObject getHeader() {
+            return g.this.D();
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* renamed from: an2.g$g */
+    /* loaded from: classes12.dex */
+    public class C0083g implements q9.e {
+        public C0083g() {
+            g.this = r1;
+        }
+
+        @Override // q9.e
+        public void analyticsLogTextMetric(String str, String str2) {
+            b5.c.e().f().logTextMetric(str, str2);
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class h implements s9.a {
+
+        /* compiled from: SantanderConnectorHelper.java */
+        /* loaded from: classes12.dex */
+        public class a implements q9.b {
+
+            /* renamed from: a */
+            public final /* synthetic */ s9.f f5145a;
+
+            /* renamed from: b */
+            public final /* synthetic */ q9.b f5146b;
+
+            public a(s9.f fVar, q9.b bVar) {
+                h.this = r1;
+                this.f5145a = fVar;
+                this.f5146b = bVar;
+            }
+
+            @Override // q9.b
+            public void onFailure(s9.h hVar) {
+                nk2.a.a("Falha no apigee refresh token: " + hVar.e() + " | " + hVar.c(), new Throwable[0]);
+                this.f5146b.onFailure(hVar);
+            }
+
+            @Override // q9.b
+            public void onSuccess(s9.h hVar) {
+                try {
+                    if (jy1.a.d().g().c(ky1.c.MBB_APIGEE_LEGACY_TOKEN_REFRESH)) {
+                        g.this.f5132e.t(this.f5145a, this.f5146b);
+                    } else {
+                        this.f5145a.resetDsp();
+                        g.this.f5132e.w(this.f5145a, this.f5146b);
+                    }
+                } catch (Exception e14) {
+                    nk2.a.a("hub 88a0c0fd", e14);
+                    this.f5146b.onFailure(hVar);
+                }
+            }
+        }
+
+        public h() {
+            g.this = r1;
+        }
+
+        @Override // s9.a
+        public void a(s9.f fVar, q9.b bVar) {
+            try {
+                g.this.f5130c.t(jy1.a.d().g().c(ky1.c.MBB_APIGEE_LEGACY_V2) ? g.this.m() : null, new a(fVar, bVar));
+            } catch (Exception e14) {
+                nk2.a.a("hub 88a0c0fd", e14);
+                bVar.onFailure(new s9.h(500, e14.toString()));
+            }
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class i implements q9.b {
+        public i() {
+            g.this = r1;
+        }
+
+        @Override // q9.b
+        public void onFailure(s9.h hVar) {
+            d.f.a("Renew HUB ticket - onFailure");
+        }
+
+        @Override // q9.b
+        public void onSuccess(s9.h hVar) {
+            d.f.a("Renew HUB ticket - onSuccess");
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class j implements q9.a {
+        public j() {
+            g.this = r1;
+        }
+
+        @Override // q9.a
+        public String a() {
+            return null;
+        }
+
+        @Override // q9.a
+        public String[] b() {
+            return new String[]{"MIIG2jCCBcKgAwIBAgIQEwE8LmfInk9F6CaGUBlE0zANBgkqhkiG9w0BAQsFADCBujELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUVudHJ1c3QsIEluYy4xKDAmBgNVBAsTH1NlZSB3d3cuZW50cnVzdC5uZXQvbGVnYWwtdGVybXMxOTA3BgNVBAsTMChjKSAyMDEyIEVudHJ1c3QsIEluYy4gLSBmb3IgYXV0aG9yaXplZCB1c2Ugb25seTEuMCwGA1UEAxMlRW50cnVzdCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEwxSzAeFw0yMDEwMTQwNzM2MDFaFw0yMTExMTAwNzM2MDBaMIGGMQswCQYDVQQGEwJFUzESMBAGA1UECBMJQ2FudGFicmlhMRIwEAYDVQQHEwlTYW50YW5kZXIxGDAWBgNVBAoTD0dSVVBPIFNBTlRBTkRFUjEPMA0GA1UECxMGQlJBU0lMMSQwIgYDVQQDExtlc2JhcGktaW1nLnNhbnRhbmRlci5jb20uYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC7D1TLQbdNODmhGqm+QOofNO6mFOIQTLWCouuQGeh9w987NM71s35dK66wlh4CSAaCeLNZ0x1s8d6SiBjnBArwLK52yxRpdgMuOmb9NUQcW+jhoD/CNfPgom1kzIubvoUoy6qa3F4X3G2F8jek3f781O5lkaDldOhjZNRj3TyCxupEulA+ScuCJn0jSZjnXIbjubObBTRknm9pnyKtNbJArBV4TrWys85qZCx28tzGtfVELB2wCYL6xbgXSicKqURWa5VOwHeWb37jXIR/PdLA7XWV/t+cmwumhAP5BEEqFebzXhonLw94+QEZFehnlJnSbpwggMa23zDRb9oA5oxVAgMBAAGjggMMMIIDCDAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBRLWLtXP8VaTNZrHUduXFpjLiz9ajAfBgNVHSMEGDAWgBSConB03bxTP8971PfNf6dgxgpMvzBoBggrBgEFBQcBAQRcMFowIwYIKwYBBQUHMAGGF2h0dHA6Ly9vY3NwLmVudHJ1c3QubmV0MDMGCCsGAQUFBzAChidodHRwOi8vYWlhLmVudHJ1c3QubmV0L2wxay1jaGFpbjI1Ni5jZXIwMwYDVR0fBCwwKjAooCagJIYiaHR0cDovL2NybC5lbnRydXN0Lm5ldC9sZXZlbDFrLmNybDAmBgNVHREEHzAdghtlc2JhcGktaW1nLnNhbnRhbmRlci5jb20uYnIwDgYDVR0PAQH/BAQDAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMEwGA1UdIARFMEMwNwYKYIZIAYb6bAoBBTApMCcGCCsGAQUFBwIBFhtodHRwczovL3d3dy5lbnRydXN0Lm5ldC9ycGEwCAYGZ4EMAQICMIIBfAYKKwYBBAHWeQIEAgSCAWwEggFoAWYAdQBVgdTCFpA2AUrqC5tXPFPwwOQ4eHAlCBcvo6odBxPTDAAAAXUmCY6QAAAEAwBGMEQCIEWFRvlngKHDCK+WH8tvll3dVNHWPzlDJlWGwCEvx8NPAiBZzPLUL+djrSUGuGW7zm9mFuGhQqxDSDnNZ21yzFbzRwB2AFYUBpov18Ls0/XhvUSyPsdGdrm8mRFcwO+UmFXWidDdAAABdSYJjs0AAAQDAEcwRQIhAPTw759oSl1d6yipFXfMq2QdJNzsZQPZ5I6qGyoA4tJLAiBqpggdmKstNFWSLfh0dQNt01pJdnajByd+YnCB8jRQ/wB1APZclC/RdzAiFFQYCDCUVo7jTRMZM7/fDC8gC8xO8WTjAAABdSYJjvAAAAQDAEYwRAIgar/bEiVVbpb879KyT9aj0XpRj8r94ECgNZMhJeLkD3sCIF7Xs7Ne+ZtD4yAkwQrvXcX0RPv+pgbnFb3QOVQg7FlVMA0GCSqGSIb3DQEBCwUAA4IBAQC6uh9ALlCmwWza0DNWvVld2ej7+0oheHs35Kcw6k2ngthp9ttqTKHHcWJLRXqNhvOUYR1jp/uCqcBVnfgrPFMjLr+Xaa7RzFXQsC11Me2Rmx0zpq1v81Kuf7G6btPs6KLOl+WOZqADLeGD9DvcKvcG5QhyVizIvKJHYI681JncChnouIoA3DUYbyehc1OgHeBGKDfRhhRgobQinwaUI4qPNCJw6EziuGIHmEK76N48UhDWrl8gP0RE/pLjnNbfdpLP6iqDX13BjYtvjPeDBEPD1jo4JDocfpi6Wca+hoIzMBv6ZSrog6C+njk1hkWXQl/G5T3N33T0fZSTxIbyb0vf"};
+        }
+
+        @Override // q9.a
+        public String c() {
+            return k23.b.f36978o;
+        }
+
+        @Override // q9.a
+        public String d() {
+            return null;
+        }
+
+        @Override // q9.a
+        public String e() {
+            return null;
+        }
+
+        @Override // q9.a
+        public String f() {
+            return null;
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class k implements s9.d {
+        public k() {
+            g.this = r1;
+        }
+
+        @Override // s9.d
+        public JSONObject a(Context context) {
+            return q53.a.a(context);
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class l implements t9.a {
+
+        /* renamed from: a */
+        public pa0.a f5151a = new a();
+
+        /* compiled from: SantanderConnectorHelper.java */
+        /* loaded from: classes12.dex */
+        public class a implements pa0.a {
+
+            /* renamed from: a */
+            public Map<String, Object> f5152a = new HashMap();
+
+            public a() {
+                l.this = r2;
+            }
+
+            @Override // pa0.a
+            public Map<String, Object> a() {
+                this.f5152a.put(oa0.b.f46966v, g.f5119l.E());
+                return this.f5152a;
+            }
+        }
+
+        @Override // t9.a
+        public void a(s9.h hVar, s9.f fVar, q9.b bVar) {
+            d.f.b("HOOK DYNAMIC AUTHENTICATION PAAS", "<=- didReceive: " + hVar.e());
+            br.com.santander.modulo.dynamicauthconnectorhooklib.paas.c.j(MinhaConta.d(), g.J().w(), s53.c.f54487a.a(), this.f5151a).b(hVar, fVar, bVar);
+        }
+
+        @Override // t9.a
+        public void b(s9.f fVar, q9.b bVar) {
+            d.f.b("HOOK DYNAMIC AUTHENTICATION PAAS", "-=> willSend: " + fVar.getEndpoint());
+            br.com.santander.modulo.dynamicauthconnectorhooklib.paas.c.i(MinhaConta.d(), g.J().w(), s53.c.f54487a.a()).a(fVar, bVar);
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class m implements t9.a {
+        @Override // t9.a
+        public void a(s9.h hVar, s9.f fVar, q9.b bVar) {
+            d.f.b("HOOK DYNAMIC AUTHENTICATION HUB", "<=- didReceive: " + hVar.e());
+            br.com.santander.modulo.dynamicauthconnectorhooklib.hub.c.j(MinhaConta.d(), g.J().z(), s53.c.f54487a.a()).b(hVar, fVar, bVar);
+        }
+
+        @Override // t9.a
+        public void b(s9.f fVar, q9.b bVar) {
+            d.f.b("HOOK DYNAMIC AUTHENTICATION HUB", "-=> willSend: " + fVar.getEndpoint());
+            br.com.santander.modulo.dynamicauthconnectorhooklib.hub.c.j(MinhaConta.d(), g.J().z(), s53.c.f54487a.a()).a(fVar, bVar);
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class n implements t9.a {
+        @Override // t9.a
+        public void a(s9.h hVar, s9.f fVar, q9.b bVar) {
+            d.f.b("HOOK DYNAMIC AUTHENTICATION APIGEE", "<=- didReceive: " + hVar.e());
+            br.com.santander.modulo.dynamicauthconnectorhooklib.apigee.b.j(MinhaConta.d(), g.J().x(), s53.c.f54487a.a()).b(hVar, fVar, bVar);
+        }
+
+        @Override // t9.a
+        public void b(s9.f fVar, q9.b bVar) {
+            d.f.b("HOOK DYNAMIC AUTHENTICATION APIGEE", "-=> willSend: " + fVar.getEndpoint());
+            br.com.santander.modulo.dynamicauthconnectorhooklib.apigee.b.j(MinhaConta.d(), g.J().x(), s53.c.f54487a.a()).a(fVar, bVar);
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class o implements q9.a {
+        @Override // q9.a
+        public String a() {
+            return ik2.a.f34419e;
+        }
+
+        @Override // q9.a
+        public String[] b() {
+            return (String[]) g.J().x().c().c().values().toArray(new String[0]);
+        }
+
+        @Override // q9.a
+        public String c() {
+            return s43.b.z0().p();
+        }
+
+        @Override // q9.a
+        public String d() {
+            String[] a14 = q0.a(MinhaConta.d());
+            return a14 != null ? a14[2] : "";
+        }
+
+        @Override // q9.a
+        public String e() {
+            return "35";
+        }
+
+        @Override // q9.a
+        public String f() {
+            return s43.b.z0().z();
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class p implements tm2.c<xz2.c> {
+
+        /* renamed from: a */
+        public final /* synthetic */ q9.b f5154a;
+
+        public p(q9.b bVar) {
+            g.this = r1;
+            this.f5154a = bVar;
+        }
+
+        @Override // tm2.c
+        /* renamed from: a */
+        public void callBack(xz2.c cVar) {
+            d.f.b("LOGIN_TEST", "startConnectorHUB - callback");
+            if (cVar != null && !"".equals(cVar.d())) {
+                g.this.Q(this.f5154a, cVar.d());
+                return;
+            }
+            an2.b.i().m(false);
+            this.f5154a.onFailure(new s9.h(500, "Ticket null"));
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class q implements tm2.c<xz2.b> {
+
+        /* renamed from: a */
+        public final /* synthetic */ q9.b f5156a;
+
+        public q(q9.b bVar) {
+            g.this = r1;
+            this.f5156a = bVar;
+        }
+
+        @Override // tm2.c
+        /* renamed from: a */
+        public void callBack(xz2.b bVar) {
+            d.f.b("LOGIN_TEST", "startConnectorHUB - callback");
+            if (bVar != null && !"".equals(bVar.f().d())) {
+                if (bVar.e() != null && !bVar.e().d().isEmpty()) {
+                    om2.f.k().z(bVar.e().d());
+                }
+                g.this.Q(this.f5156a, bVar.f().d());
+                return;
+            }
+            an2.b.i().m(false);
+            this.f5156a.onFailure(new s9.h(500, "Ticket null"));
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class r implements q9.b {
+
+        /* renamed from: a */
+        public final /* synthetic */ q9.b f5158a;
+
+        public r(q9.b bVar) {
+            g.this = r1;
+            this.f5158a = bVar;
+        }
+
+        @Override // q9.b
+        public void onFailure(s9.h hVar) {
+            nk2.a.a("hub 6ce1bfc3", an2.c.k(hVar));
+            an2.b.i().m(false);
+            this.f5158a.onFailure(hVar);
+        }
+
+        @Override // q9.b
+        public void onSuccess(s9.h hVar) {
+            if (jy1.a.d().g().c(ky1.c.MBB_APIGEE_LEGACY_V2)) {
+                g.this.N();
+            }
+            an2.b.i().m(true);
+            this.f5158a.onSuccess(hVar);
+        }
+    }
+
+    /* compiled from: SantanderConnectorHelper.java */
+    /* loaded from: classes12.dex */
+    public class s implements s9.k {
+        @Override // s9.k
+        public String decrypt(String str) {
+            return str;
+        }
+
+        @Override // s9.k
+        public String encrypt(String str) {
+            return str;
+        }
+
+        @Override // s9.k
+        public String encrypt(JSONObject jSONObject) {
+            return jSONObject.toString();
+        }
+    }
+
+    public g() {
+        U();
+        R();
+        k kVar = new k();
+        z9.a.A(this.f5135h);
+        z9.a aVar = new z9.a();
+        this.f5129b = aVar;
+        MinhaConta d14 = MinhaConta.d();
+        r9.a environment = s43.b.z0().getEnvironment();
+        r9.c cVar = r9.c.MBB;
+        aVar.k(d14, environment, cVar);
+        this.f5129b.E(s9.e.PAAS);
+        this.f5129b.J(f5126s);
+        this.f5129b.D(f5120m);
+        z9.a.M(this.f5138k);
+        this.f5129b.H(kVar);
+        z9.a aVar2 = new z9.a();
+        this.f5130c = aVar2;
+        aVar2.k(MinhaConta.d(), s43.b.z0().getEnvironment(), cVar);
+        z9.a aVar3 = this.f5130c;
+        s9.e eVar = s9.e.HUB;
+        aVar3.E(eVar);
+        z9.a aVar4 = this.f5130c;
+        t9.a aVar5 = f5121n;
+        aVar4.D(aVar5);
+        this.f5130c.L(nl2.e.j().i());
+        z9.a.O(this.f5137j);
+        this.f5130c.H(kVar);
+        z9.a aVar6 = new z9.a();
+        this.f5131d = aVar6;
+        aVar6.k(MinhaConta.d(), s43.b.z0().getEnvironment(), cVar);
+        this.f5131d.K(true);
+        this.f5131d.E(eVar);
+        this.f5131d.D(aVar5);
+        this.f5131d.L(nl2.e.j().i());
+        this.f5131d.H(kVar);
+        z9.a aVar7 = new z9.a();
+        this.f5133f = aVar7;
+        aVar7.k(MinhaConta.d(), s43.b.z0().getEnvironment(), cVar);
+        this.f5133f.E(s9.e.REST);
+        this.f5133f.J(f5125r);
+        this.f5133f.H(kVar);
+        z9.a aVar8 = new z9.a();
+        this.f5134g = aVar8;
+        aVar8.l(MinhaConta.d(), s43.b.z0().getEnvironment(), cVar, o9.e.a(), o9.a.b());
+        this.f5134g.E(s9.e.CUSTOM);
+        z9.a aVar9 = new z9.a();
+        this.f5132e = aVar9;
+        aVar9.k(MinhaConta.d(), s43.b.z0().getEnvironment(), cVar);
+        this.f5132e.E(s9.e.APIGEE);
+        this.f5132e.D(f5122o);
+        z9.a.N(this.f5136i);
+        this.f5132e.H(kVar);
+    }
+
+    public static List<Integer> H() {
+        return f5123p;
+    }
+
+    public static g J() {
+        if (f5119l == null) {
+            f5119l = new g();
+        }
+        return f5119l;
+    }
+
+    public /* synthetic */ void O() {
+        if (jy1.a.d().g().c(ky1.c.MBB_RETRY_TICKET_HUB)) {
+            d.f.a("Renew HUB ticket");
+            S(new i());
+        }
+    }
+
+    public static /* synthetic */ void P(JSONObject jSONObject) {
+        if (jy1.a.d().g().c(ky1.c.MBB_LOGOUT)) {
+            try {
+                new bn2.a((cn2.b) new Gson().fromJson(jSONObject.toString(), (Class<Object>) cn2.b.class)).a();
+            } catch (JsonSyntaxException unused) {
+                d.f.d("Falha no parse do Json, no tratamento de erros do PaaS");
+            }
+        }
+    }
+
+    public static /* synthetic */ void a(JSONObject jSONObject) {
+        P(jSONObject);
+    }
+
+    public static /* synthetic */ void b(g gVar) {
+        gVar.O();
+    }
+
+    public z9.a A() {
+        return this.f5130c;
+    }
+
+    public z9.a B() {
+        try {
+            this.f5133f.G("versao-mbb", ik2.a.f34419e);
+        } catch (JSONException e14) {
+            nk2.a.a("hub a424d11b", e14);
+        }
+        return this.f5133f;
+    }
+
+    public final JSONObject C() {
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("X-Application-Key", String.valueOf(p53.a.b().a().get("appKey")));
+            jSONObject.put("Content-Type", "application/json");
+            jSONObject.put("versao-mbb", this.f5128a);
+        } catch (JSONException e14) {
+            nk2.a.a("hub d989e856", e14);
+        }
+        return jSONObject;
+    }
+
+    public final JSONObject D() {
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("Content-Type", "application/json");
+            jSONObject.put(k23.b.f36974k, "application/json");
+            jSONObject.put("X-Application-Key", this.f5132e.c().a());
+            s43.b.z0().j().i0("");
+        } catch (JSONException e14) {
+            d.f.d(e14);
+        }
+        return jSONObject;
+    }
+
+    public final JSONObject E() {
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("Content-Type", "application/json");
+            jSONObject.put(k23.b.f36974k, "application/json");
+            jSONObject.put(HttpHeaders.ACCEPT_ENCODING, "gzip");
+            jSONObject.put("Content-Encoding", "gzip");
+            jSONObject.put(x9.a.f63623m, s43.b.z0().i());
+            jSONObject.put(x9.a.f63624n, s43.b.z0().j().z());
+            s43.b.z0().j().i0("");
+        } catch (JSONException e14) {
+            nk2.a.a("hub 6ec5f587", e14);
+        }
+        return jSONObject;
+    }
+
+    public final JSONObject F() {
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("Content-Type", "application/json");
+            jSONObject.put(k23.b.f36974k, "application/json");
+            jSONObject.put(x9.a.f63623m, s43.b.z0().i());
+            jSONObject.put(x9.a.f63624n, s43.b.z0().j().z());
+            s43.b.z0().j().i0("");
+        } catch (JSONException e14) {
+            d.f.d(e14);
+        }
+        return jSONObject;
+    }
+
+    public nl.d G() {
+        return new e();
+    }
+
+    public final String I(String[] strArr) {
+        return xz2.a.V1_TICKET.getValue() + "?type=" + TextUtils.join(",", strArr);
+    }
+
+    public q9.f K() {
+        return new c();
+    }
+
+    public q9.f L() {
+        return new f();
+    }
+
+    public q9.f M() {
+        return new d();
+    }
+
+    public final void N() {
+        new g43.a(this.f5130c).b();
+    }
+
+    public final void Q(q9.b bVar, String str) {
+        try {
+            this.f5130c.t(V(str, p53.a.b().a()), new r(bVar));
+        } catch (Exception e14) {
+            nk2.a.a("hub 88a0c0fd", e14);
+        }
+    }
+
+    public final void R() {
+        this.f5128a = ik2.a.f34419e;
+    }
+
+    public void S(q9.b bVar) {
+        yz2.b bVar2 = new yz2.b(this.f5129b);
+        if (!jy1.a.d().g().c(ky1.c.MBB_TICKET_UNIFICADO_LOGIN)) {
+            bVar2.a(xz2.a.V1_HUB, new p(bVar));
+        } else {
+            bVar2.b(I(new String[]{xz2.d.HUB.getValue(), xz2.d.CHAT.getValue()}), new q(bVar));
+        }
+    }
+
+    public void T() {
+        this.f5129b.B(f5127t);
+    }
+
+    public final void U() {
+        if (s43.b.z0().getEnvironment() == null) {
+            s43.b.z0().u0(r9.a.PROD);
+        }
+    }
+
+    public final s9.f V(String str, Properties properties) {
+        s9.f fVar = new s9.f();
+        fVar.setEndpoint(an2.d.TOKEN_VALIDADE.getEndpoint());
+        fVar.setHttpMethod(r9.b.POST);
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("X-Application-Key", String.valueOf(properties.get("appKey")));
+            jSONObject.put("versao-mbb", this.f5128a);
+        } catch (JSONException e14) {
+            nk2.a.a("hub 5a53a625", e14);
+        }
+        JSONObject jSONObject2 = new JSONObject();
+        try {
+            jSONObject2.put(wo2.a.f62620j, str);
+            jSONObject2.put(w5.e.U7, "MBB");
+        } catch (Exception e15) {
+            nk2.a.a("hub 7fb873ca", e15);
+        }
+        fVar.setBody(jSONObject2);
+        fVar.setHeaders(jSONObject);
+        fVar.setHasToken(Boolean.TRUE);
+        return fVar;
+    }
+
+    public final s9.f m() {
+        s9.f fVar = new s9.f();
+        fVar.setEndpoint("auth_convivencia/v1/token");
+        fVar.setHttpMethod(r9.b.POST);
+        fVar.setHasToken(Boolean.TRUE);
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("X-Application-Key", this.f5130c.c().a());
+            jSONObject.put("Content-Type", "application/x-www-form-urlencoded");
+        } catch (JSONException e14) {
+            nk2.a.a("Falha na criacao do header", e14);
+        }
+        fVar.setBody("grant_type=refresh_token");
+        fVar.setHeaders(jSONObject);
+        return fVar;
+    }
+
+    public s9.f n(String str, r9.b bVar, String str2, boolean z14) {
+        return o(str, bVar, E(), str2, z14);
+    }
+
+    public s9.f o(String str, r9.b bVar, JSONObject jSONObject, String str2, boolean z14) {
+        s9.f fVar = new s9.f();
+        fVar.setEndpoint(str);
+        fVar.setHttpMethod(bVar);
+        if (jSONObject != null) {
+            fVar.setHeaders(jSONObject);
+        } else {
+            fVar.setHeaders(E());
+        }
+        fVar.setBody(str2);
+        fVar.setHasToken(Boolean.valueOf(z14));
+        return fVar;
+    }
+
+    public s9.g p(String str, r9.b bVar, JSONObject jSONObject, JSONObject jSONObject2, boolean z14) {
+        s9.g gVar = new s9.g();
+        gVar.setEndpoint(str);
+        gVar.setHttpMethod(bVar);
+        if (jSONObject != null) {
+            try {
+                jSONObject.put("versao-mbb", this.f5128a);
+            } catch (JSONException e14) {
+                nk2.a.a("hub e8d65a95", e14);
+            }
+            gVar.setHeaders(jSONObject);
+        } else {
+            gVar.setHeaders(C());
+        }
+        gVar.setBody(jSONObject2);
+        gVar.setHasToken(Boolean.valueOf(z14));
+        return gVar;
+    }
+
+    public s9.g q(String str, r9.b bVar, JSONObject jSONObject, boolean z14) {
+        return p(str, bVar, C(), jSONObject, z14);
+    }
+
+    public s9.g r(String str, r9.b bVar, boolean z14) {
+        return q(str, bVar, new JSONObject(), z14);
+    }
+
+    public s9.f s(String str, r9.b bVar, JSONObject jSONObject, JSONObject jSONObject2, boolean z14) {
+        s9.f fVar = new s9.f();
+        fVar.setEndpoint(str);
+        fVar.setHttpMethod(bVar);
+        if (jSONObject != null) {
+            fVar.setHeaders(jSONObject);
+        } else {
+            fVar.setHeaders(E());
+        }
+        fVar.setShouldEncrypt(true);
+        fVar.setBody(jSONObject2);
+        fVar.setHasToken(Boolean.valueOf(z14));
+        return fVar;
+    }
+
+    public s9.f t(String str, r9.b bVar, JSONObject jSONObject, boolean z14) {
+        return s(str, bVar, E(), jSONObject, z14);
+    }
+
+    public final q9.a u() {
+        return new j();
+    }
+
+    public z9.a v() {
+        try {
+            this.f5131d.G("versao-mbb", ik2.a.f34419e);
+        } catch (JSONException e14) {
+            nk2.a.a("hub 2aab1139", e14);
+        }
+        return this.f5131d;
+    }
+
+    public z9.a w() {
+        try {
+            this.f5129b.G("versao-mbb", ik2.a.f34419e);
+        } catch (JSONException e14) {
+            nk2.a.a("hub 9e4a7f9e", e14);
+        }
+        return this.f5129b;
+    }
+
+    public z9.a x() {
+        return this.f5132e;
+    }
+
+    public z9.a y() {
+        return this.f5134g;
+    }
+
+    public z9.a z() {
+        try {
+            this.f5130c.G("versao-mbb", ik2.a.f34419e);
+        } catch (JSONException e14) {
+            nk2.a.a("hub 2aab1139", e14);
+        }
+        return this.f5130c;
+    }
+}
+
+package su2;
+
+import android.app.Activity;
+import android.content.SharedPreferences;
+import android.text.Html;
+import bo2.c;
+import br.com.santander.module.ddslib.common.exception.DdsException;
+import br.com.santander.preferences.Preferences;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
+import com.google.i18n.phonenumbers.PhoneNumberUtil;
+import com.santander.app.MinhaConta;
+import com.santander.app.R;
+import java.text.ParseException;
+import jp1.a;
+import m53.d1;
+import m53.f1;
+import nk2.b;
+import ok2.a;
+import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
+import ot2.q;
+import rk2.i;
+import s9.h;
+import su2.d;
+
+/* compiled from: LoginInteractorImpl.java */
+/* loaded from: classes12.dex */
+public class d implements su2.a {
+
+    /* renamed from: n */
+    public static final String f55774n = "LoginInteractorImpl";
+
+    /* renamed from: o */
+    public static final String f55775o = "CheckVersionPrefs";
+
+    /* renamed from: p */
+    public static final String f55776p = "count";
+
+    /* renamed from: a */
+    public uu2.a f55777a;
+
+    /* renamed from: b */
+    public s43.a f55778b;
+
+    /* renamed from: c */
+    public vu2.b f55779c;
+
+    /* renamed from: d */
+    public vu2.f f55780d;
+
+    /* renamed from: e */
+    public xt2.b f55781e;
+
+    /* renamed from: f */
+    public bo2.c f55782f;
+
+    /* renamed from: g */
+    public gv.a f55783g;
+
+    /* renamed from: h */
+    public i f55784h;
+
+    /* renamed from: i */
+    public Activity f55785i;
+
+    /* renamed from: j */
+    public kp1.b f55786j;
+
+    /* renamed from: k */
+    public rk2.f f55787k;
+
+    /* renamed from: l */
+    public pl2.c f55788l;
+
+    /* renamed from: m */
+    public final rk2.e f55789m = new f();
+
+    /* compiled from: LoginInteractorImpl.java */
+    /* loaded from: classes12.dex */
+    public class a implements av.b<dv.a> {
+
+        /* renamed from: a */
+        public final /* synthetic */ String f55790a;
+
+        public a(String str) {
+            d.this = r1;
+            this.f55790a = str;
+        }
+
+        @Override // av.b
+        public void a(@NotNull DdsException ddsException) {
+            d.this.f55777a.b();
+            d.this.f55777a.yi();
+            d.this.f55778b.Y(false);
+            d.this.f55777a.q0(ddsException.getMessage());
+            d.f.e(d.f55774n, "Falha no mecanismo do DDS: " + ddsException.getMessage());
+        }
+
+        @Override // av.b
+        /* renamed from: b */
+        public void onSuccess(dv.a aVar) {
+            String h14 = aVar.h();
+            String j14 = aVar.j();
+            d.this.U(this.f55790a, aVar.g());
+            d.this.F(h14);
+            d.this.K(j14);
+        }
+    }
+
+    /* compiled from: LoginInteractorImpl.java */
+    /* loaded from: classes12.dex */
+    public class b implements q9.b {
+        public b() {
+            d.this = r1;
+        }
+
+        @Override // q9.b
+        public void onFailure(h hVar) {
+            d.f.b("LOGIN_TEST", "startConnectorHUB - onFailure");
+            if (hVar != null) {
+                d.f.e("ERROR_HUB_CONNECTOR", hVar.c());
+            }
+            d.this.R();
+        }
+
+        @Override // q9.b
+        public void onSuccess(h hVar) {
+            d.f.b("LOGIN_TEST", "startConnectorHUB - onSuccess");
+            try {
+                String string = hVar.d().getString("monitoringHash");
+                s43.b.z0().c1(string);
+                d.this.Q(string);
+            } catch (NullPointerException | JSONException e14) {
+                FirebaseCrashlytics.getInstance().recordException(e14);
+                d.f.d(e14);
+            }
+            if (d.this.f55782f.c()) {
+                d.this.P();
+            } else {
+                d.this.R();
+            }
+        }
+    }
+
+    /* compiled from: LoginInteractorImpl.java */
+    /* loaded from: classes12.dex */
+    public class c implements c.InterfaceC0196c {
+        public c() {
+            d.this = r1;
+        }
+
+        @Override // bo2.c.InterfaceC0196c
+        public void a(q qVar) {
+            d.this.R();
+        }
+
+        @Override // bo2.c.InterfaceC0196c
+        public void b(q qVar) {
+            if (qVar == null || qVar.b() == null) {
+                d.this.f55777a.W0(R.string.erro_retorno_service);
+                d.f.d("(requestSaldoContaCorrenteHub)");
+                return;
+            }
+            d.this.f55777a.W0(R.string.erro_retorno_service);
+            d.f.d("(requestSaldoContaCorrenteHub)");
+        }
+
+        @Override // bo2.c.InterfaceC0196c
+        public void onError(h hVar) {
+            if (hVar != null) {
+                d.this.f55777a.q0(hVar.c());
+            } else {
+                d.this.f55777a.W0(R.string.app_indisponivel_message);
+            }
+        }
+    }
+
+    /* compiled from: LoginInteractorImpl.java */
+    /* renamed from: su2.d$d */
+    /* loaded from: classes12.dex */
+    public class C2190d implements qu2.a {
+
+        /* renamed from: a */
+        public final /* synthetic */ qu2.a f55794a;
+
+        public C2190d(qu2.a aVar) {
+            d.this = r1;
+            this.f55794a = aVar;
+        }
+
+        @Override // qu2.a
+        public void a(tm2.a aVar) {
+            this.f55794a.a(aVar);
+            b5.c.e().f().logTextMetric(b.t.f46055p, o30.i.f46738y);
+        }
+
+        @Override // qu2.a
+        public void onSuccess() {
+            this.f55794a.onSuccess();
+        }
+    }
+
+    /* compiled from: LoginInteractorImpl.java */
+    /* loaded from: classes12.dex */
+    public class e implements rk2.h {
+        public e() {
+            d.this = r1;
+        }
+
+        @Override // rk2.h
+        public void a() {
+            d.this.f55777a.b();
+            d.this.f55777a.yi();
+        }
+
+        @Override // rk2.h
+        public void b(boolean z14, boolean z15) {
+            nk2.d.f46148b.stop();
+            d.this.f55788l.o(s43.b.z0().j().l());
+            d.this.G(z14);
+            d.this.i(z15);
+        }
+
+        @Override // rk2.h
+        public void c(@NotNull p82.f fVar) {
+            d.this.f55778b.Y(false);
+            int i14 = g.f55798a[fVar.a().ordinal()];
+            if (i14 == 1 || i14 == 2) {
+                d.this.f55777a.x0(fVar.c());
+            } else if (i14 == 3) {
+                s43.b.z0().j().b0(true);
+                d.this.f55777a.T0(fVar.c());
+            } else if (i14 != 4) {
+                d.this.f55777a.q0(fVar.c());
+            } else {
+                d.this.f55777a.Di(fVar.c());
+            }
+        }
+    }
+
+    /* compiled from: LoginInteractorImpl.java */
+    /* loaded from: classes12.dex */
+    public class f implements rk2.e {
+        public f() {
+            d.this = r1;
+        }
+
+        public static /* synthetic */ void b(f fVar, cw0.a aVar) {
+            fVar.c(aVar);
+        }
+
+        public /* synthetic */ void c(cw0.a aVar) {
+            d.this.f55777a.Qi(true);
+        }
+
+        @Override // rk2.e
+        public void a(@NotNull jp1.a aVar) {
+            d.this.f55777a.b();
+            switch (g.f55799b[aVar.a().ordinal()]) {
+                case 1:
+                    d.this.f55777a.q0(aVar.c());
+                    return;
+                case 2:
+                    d.this.f55777a.Di(aVar.c());
+                    return;
+                case 3:
+                    d.this.f55777a.yi();
+                    new rk2.b(MinhaConta.d(), q53.a.a(MinhaConta.d())).h(new rk2.a() { // from class: su2.e
+                        @Override // rk2.a
+                        public final void b(cw0.a aVar2) {
+                            d.f.b(d.f.this, aVar2);
+                        }
+                    });
+                    return;
+                case 4:
+                    d.this.f55788l.q(s43.b.z0().j().l());
+                    d.this.G(true);
+                    d.this.f55777a.W0(R.string.new_login_dialog_erase_criptpgram);
+                    d.this.f55777a.yi();
+                    return;
+                case 5:
+                case 6:
+                case 7:
+                    d.this.f55777a.q0(aVar.c());
+                    d.this.f55777a.yi();
+                    return;
+                case 8:
+                    d.this.f55777a.W0(R.string.error_message_generic);
+                    return;
+                default:
+                    return;
+            }
+        }
+
+        @Override // rk2.e
+        public void onSuccess() {
+            if (s43.b.z0().j().f() != null && d.this.f55786j == kp1.b.REGISTER) {
+                d.this.f55788l.t();
+                d.this.f55788l.v(s43.b.z0().j().f().d());
+            }
+            d.f.b("LOGIN_TEST", "autenticaUsuario");
+            d.this.S(s43.b.z0().j());
+        }
+    }
+
+    /* compiled from: LoginInteractorImpl.java */
+    /* loaded from: classes12.dex */
+    public static /* synthetic */ class g {
+
+        /* renamed from: a */
+        public static final /* synthetic */ int[] f55798a;
+
+        /* renamed from: b */
+        public static final /* synthetic */ int[] f55799b;
+
+        static {
+            int[] iArr = new int[a.EnumC1394a.values().length];
+            f55799b = iArr;
+            try {
+                iArr[a.EnumC1394a.POPUP_ERROR_MESSAGE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                f55799b[a.EnumC1394a.POPUP_ERROR_MESSAGE_THEN_SHOW_PASSWORD_RESET.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                f55799b[a.EnumC1394a.REDIRECT_ACCOUNT_VALIDATION_THEN_PASSWORD_MANDATORY.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                f55799b[a.EnumC1394a.POPUP_ERROR_MESSAGE_THEN_ERASE_CRYPTOGRAM_THEN_PASSWORD_MANDATORY.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                f55799b[a.EnumC1394a.POPUP_ERROR_MESSAGE_THEN_SHOW_LOGGEDOUT_HOMESCREEN.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                f55799b[a.EnumC1394a.POPUP_ERROR_MESSAGE_THEN_PASSWORD_MANDATORY.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                f55799b[a.EnumC1394a.POPUP_ERROR_MESSAGE_THEN_GO_BACK_KEY_EXCHANGE.ordinal()] = 7;
+            } catch (NoSuchFieldError unused7) {
+            }
+            try {
+                f55799b[a.EnumC1394a.ACTION_NOT_MAPPED.ordinal()] = 8;
+            } catch (NoSuchFieldError unused8) {
+            }
+            int[] iArr2 = new int[q82.a.values().length];
+            f55798a = iArr2;
+            try {
+                iArr2[q82.a.POPUP_ERROR_MESSAGE_THEN_REDIRECT_ACCOUNT_OPENING.ordinal()] = 1;
+            } catch (NoSuchFieldError unused9) {
+            }
+            try {
+                f55798a[q82.a.POPUP_ERROR_MESSAGE_THEN_REDIRECT_INTERNET_BANKING_REGISTRATION.ordinal()] = 2;
+            } catch (NoSuchFieldError unused10) {
+            }
+            try {
+                f55798a[q82.a.POPUP_ERROR_MESSAGE_THEN_REDIRECT_WAY.ordinal()] = 3;
+            } catch (NoSuchFieldError unused11) {
+            }
+            try {
+                f55798a[q82.a.POPUP_ERROR_MESSAGE_THEN_SHOW_PASSWORD_RESET.ordinal()] = 4;
+            } catch (NoSuchFieldError unused12) {
+            }
+            try {
+                f55798a[q82.a.POPUP_ERROR_MESSAGE.ordinal()] = 5;
+            } catch (NoSuchFieldError unused13) {
+            }
+        }
+    }
+
+    public d(uu2.a aVar, Activity activity, s43.b bVar, pl2.c cVar) {
+        this.f55777a = aVar;
+        this.f55785i = activity;
+        this.f55778b = bVar;
+        this.f55788l = cVar;
+        rk2.f fVar = new rk2.f(cVar);
+        this.f55787k = fVar;
+        this.f55779c = new vu2.e(fVar);
+        this.f55782f = new bo2.d();
+        this.f55781e = new xt2.b();
+        this.f55780d = new vu2.g();
+    }
+
+    public static /* synthetic */ void M(String str, String str2) {
+        b5.c.e().f().logTextMetric(str, str2);
+    }
+
+    public /* synthetic */ void N(a63.d dVar) {
+        if (dVar != null && dVar.getConfirmacao().equalsIgnoreCase("ok") && dVar.getTokenTransacao() != null) {
+            s43.b.z0().j().j0(dVar.getTokenTransacao());
+        }
+        String k14 = s43.b.z0().j().d().m().k();
+        b5.c.e().f().logTextMetric("Hub_alive", k14);
+        an2.g J = an2.g.J();
+        d.f.b("LOGIN_TEST", "validadeLogin - start");
+        new c13.a(this.f55785i).a();
+        if ("S".equalsIgnoreCase(k14)) {
+            J.S(new b());
+        } else {
+            R();
+        }
+    }
+
+    public static /* synthetic */ void b(String str, String str2) {
+        M(str, str2);
+    }
+
+    public static /* synthetic */ void p(d dVar, a63.d dVar2) {
+        dVar.N(dVar2);
+    }
+
+    public final void D() {
+        V();
+    }
+
+    public final boolean E() {
+        Preferences preferences = Preferences.get(this.f55777a.getContext(), f55775o);
+        boolean z14 = true;
+        int i14 = preferences.getInt(f55776p, 1);
+        int i15 = 0;
+        if (i14 != 1) {
+            i15 = i14 + 1;
+            z14 = false;
+        }
+        preferences.edit().putInt(f55776p, i15).apply();
+        return z14;
+    }
+
+    public final void F(String str) {
+        if (str == null || str.isEmpty()) {
+            return;
+        }
+        s43.a aVar = this.f55778b;
+        if (!str.endsWith("/")) {
+            str = str + "/";
+        }
+        aVar.q(str);
+        an2.g.J().T();
+    }
+
+    public final void G(boolean z14) {
+        if (z14) {
+            if (this.f55788l.n(s43.b.z0().j().l())) {
+                L();
+            }
+            s43.b.z0().O(false);
+            return;
+        }
+        s43.b.z0().O(true);
+    }
+
+    public final void H() {
+        Preferences.get(this.f55777a.getContext(), f55775o).edit().clear().apply();
+    }
+
+    @NotNull
+    public final tm2.d<a63.d> I() {
+        return new tm2.d() { // from class: su2.c
+            @Override // tm2.d
+            public final void callBack(Object obj) {
+                d.p(d.this, (a63.d) obj);
+            }
+        };
+    }
+
+    public final int J(s43.c cVar) {
+        try {
+            return Integer.parseInt(cVar.d().u());
+        } catch (Exception e14) {
+            FirebaseCrashlytics.getInstance().recordException(e14);
+            return 0;
+        }
+    }
+
+    public final void K(String str) {
+        if ("UNSUPPORTED".equals(str)) {
+            H();
+            this.f55777a.Ni(2);
+            this.f55778b.Y(false);
+        } else if ("OUTDATED".equals(str)) {
+            if (E()) {
+                this.f55777a.Ni(1);
+            } else {
+                D();
+            }
+        } else {
+            D();
+        }
+    }
+
+    public final void L() {
+        if (!"".equals(f1.b(s43.b.z0().j().l()))) {
+            this.f55777a.W0(R.string.msg_error_login_digital_1);
+        } else {
+            this.f55777a.W0(R.string.msg_error_login_digital_2);
+        }
+    }
+
+    public final void O(String str) {
+        b5.c.e().d().g(a.j.f48295c, "login", "exibiu", str);
+    }
+
+    public final void P() {
+        this.f55782f.d(new c());
+    }
+
+    public final void Q(String str) {
+        b5.c.e().f().g("hashmonitoracao", str);
+        if (str != null && !str.isEmpty() && str.length() > 36) {
+            String substring = str.substring(0, 36);
+            String substring2 = str.substring(36);
+            b5.c.e().d().y(a.h.f48182e, substring);
+            b5.c.e().d().y(a.h.f48183f, substring2);
+        } else if (str.length() <= 36) {
+            b5.c.e().d().y("clientId", str);
+        }
+    }
+
+    public final void R() {
+        d.f.b("LOGIN_TEST", "startApp");
+        b5.c.e().f().a("Login");
+        this.f55777a.Ei();
+        MinhaConta.d().runIntent();
+        try {
+            nk2.c.f46144a.e(s43.b.z0().j().l());
+        } catch (Exception e14) {
+            FirebaseCrashlytics.getInstance().recordException(e14);
+            d.f.d(e14);
+        }
+        if (this.f55778b.j().I().booleanValue()) {
+            try {
+                this.f55777a.Ki();
+            } catch (ParseException e15) {
+                FirebaseCrashlytics.getInstance().recordException(e15);
+                d.f.d(e15);
+            }
+            this.f55777a.b();
+            return;
+        }
+        this.f55779c.d(Boolean.TRUE);
+        nk2.d.f46149c.stop();
+        nk2.d.f46150d.stop();
+        nk2.d.f46151e.start();
+        this.f55777a.g0();
+    }
+
+    public final void S(s43.c cVar) {
+        if (cVar.d() != null && cVar.d().getMsgErro() != null && cVar.d().getMsgErro().length() > 0) {
+            T(cVar);
+        } else if (this.f55778b.c() != null && !this.f55778b.c().isEmpty()) {
+            this.f55778b.j().r0();
+            W();
+        } else {
+            this.f55777a.o(this.f55778b.x());
+        }
+    }
+
+    public final void T(s43.c cVar) {
+        nk2.a.c(b.r.f45985l, "tratamentoErro");
+        if (cVar.d().getCodErro().equals("1000")) {
+            this.f55777a.Si("CPF ou senha inválidos");
+            O(a.f.f47985f6);
+        } else if (cVar.d().getCodErro().equals("1001")) {
+            this.f55777a.Si("CPF ou senha inválidos");
+            O(a.f.f47985f6);
+        } else if (cVar.d().getCodErro().equals("1002")) {
+            if (this.f55778b.V()) {
+                this.f55777a.zi();
+                O(a.f.f47994g6);
+                return;
+            }
+            this.f55777a.Si("CPF ou senha inválidos");
+            O(a.f.f47985f6);
+        } else if (cVar.d().getCodErro().equals("18369")) {
+            if (this.f55778b.V()) {
+                this.f55777a.zi();
+                O(a.f.f47994g6);
+                return;
+            }
+            this.f55777a.Si("Você excedeu as tentativas de senha e o seu acesso foi cancelado. Toque em Esqueci a Senha recadastrá-lo.");
+            O(a.f.f47994g6);
+        } else if (cVar.d().getCodErro().equals(PhoneNumberUtil.REGION_CODE_FOR_NON_GEO_ENTITY)) {
+            this.f55777a.Si(cVar.d().getMsgErro());
+        } else if (cVar.d().getCodErro().equals("416")) {
+            this.f55777a.Si(cVar.d().getMsgErro());
+        } else if (cVar.d().getCodErro().equals("18370")) {
+            this.f55777a.Si("Você excedeu as tentativas de senha e o seu acesso foi cancelado. Toque em Esqueci a Senha recadastrá-lo.");
+        } else if (cVar.d().getCodErro().equals("18326")) {
+            this.f55777a.Si("Senha escolhida já foi utilizada e não poderá ser repetida. Por favor, escolha uma nova senha diferente.");
+        } else if (cVar.d().getCodErro().equals("18306")) {
+            this.f55777a.Si("Senha informada é inválida.");
+            O(a.f.f47985f6);
+        } else if (cVar.d().getCodErro().equals("18358")) {
+            this.f55777a.Si("Senha inválida. Para sua segurança, a senha de acesso deve ter 6 (seis) números que não podem ser repetidos, nem sequenciais. Também não podem ser escolhidas as últimas senhas já utilizadas.");
+        } else if (cVar.d().getCodErro().equals("18367")) {
+            this.f55777a.Si("Senha inválida. Uma nova tentativa incorreta cancelará sua senha, e será necessário cadastrar uma nova.");
+        } else if (cVar.d().getCodErro().equals("18328")) {
+            this.f55777a.Si("Sua senha foi cancelada por medida preventiva de segurança. Por favor, acesse o Internet Banking com seu CPF e cadastre uma nova senha. Em caso de dúvidas, entre em contato com a Central de Atendimento.");
+        } else if (cVar.d().getCodErro().equals("18368")) {
+            this.f55777a.Si("Notamos que você ainda não é nosso cliente. Acesse santander.com.br e abra sua conta.");
+        } else if (cVar.d().getMsgErro().contains("74813")) {
+            b5.c.e().f().logTextMetric(b.w.f46141i, cVar.d().getMsgErro());
+            this.f55777a.q0(cVar.d().getMsgErro());
+        } else if (cVar.d().getCodErro().equals("-1")) {
+            this.f55777a.q0(cVar.d().getMsgErro());
+        } else {
+            if (cVar.d() != null) {
+                d.f.e(f55774n, cVar.d().getMsgErro());
+                nk2.a.c(b.r.f45983j, cVar.d().getMsgErro());
+                nk2.a.c(b.r.f45984k, cVar.d().getCodErro());
+            }
+            this.f55777a.q0(Html.fromHtml(MinhaConta.d().getResources().getString(R.string.default_error)).toString());
+        }
+    }
+
+    public final void U(String str, String str2) {
+        if (str2 != null && !str2.isEmpty()) {
+            this.f55778b.j().W(str2);
+        } else {
+            this.f55778b.j().W(str);
+        }
+        this.f55778b.j().V(s43.b.z0().j().m());
+    }
+
+    public final void V() {
+        i iVar = new i(an2.g.J().w(), q53.a.a(MinhaConta.d()), this.f55785i);
+        this.f55784h = iVar;
+        iVar.h(new e());
+    }
+
+    public final void W() {
+        d.f.l("LOGIN_PERFORMANCE_SENHA", "validadeLogin()");
+        String x14 = this.f55778b.j().x();
+        if (x14.equals("VGUN")) {
+            x14 = "UN";
+        }
+        if (this.f55778b.j().I().booleanValue()) {
+            x14 = "NC0";
+        }
+        this.f55779c.c(x14);
+        if (MinhaConta.d().getResources().getBoolean(R.bool.readOnly)) {
+            uo2.c.r().H(Boolean.TRUE);
+        }
+        if (d1.a().e(ky1.c.MBB_LIGAR_CHAMADA_GENERATE_TOKEN_JAB)) {
+            new g63.a(I()).b();
+        } else {
+            I().callBack(null);
+        }
+    }
+
+    @Override // su2.a
+    public void a() {
+        xt2.b bVar = this.f55781e;
+        if (bVar != null) {
+            bVar.p();
+        }
+    }
+
+    @Override // su2.a
+    public void c(pl2.b bVar) {
+        vu2.a aVar = new vu2.a(this.f55788l.j(s43.b.z0().j().l()), bVar.d());
+        aVar.e(this.f55786j);
+        if (s43.b.z0().S0()) {
+            return;
+        }
+        this.f55779c.a(aVar, this.f55789m);
+    }
+
+    @Override // su2.a
+    public void d() {
+        this.f55777a.Fi(this.f55788l.a());
+    }
+
+    @Override // su2.a
+    public void e() {
+        this.f55780d.e();
+        this.f55778b.r0("");
+    }
+
+    @Override // su2.a
+    public void f() {
+        this.f55779c.f();
+    }
+
+    @Override // su2.a
+    public void g() {
+        this.f55777a.Ji(this.f55778b.I());
+    }
+
+    @Override // su2.a
+    public void h() {
+        this.f55777a.b();
+        this.f55777a.Ff();
+        this.f55777a.Ei();
+    }
+
+    @Override // su2.a
+    public void i(boolean z14) {
+        this.f55777a.Bi(z14);
+        h();
+    }
+
+    @Override // su2.a
+    public void j(boolean z14, String str) {
+        if (z14) {
+            this.f55780d.a(str);
+            this.f55780d.c(str);
+            this.f55778b.r0(str);
+        }
+    }
+
+    @Override // su2.a
+    public void k(qu2.a aVar) {
+        this.f55779c.b(new C2190d(aVar));
+    }
+
+    @Override // su2.a
+    public void l(kp1.b bVar) {
+        this.f55786j = bVar;
+    }
+
+    @Override // su2.a
+    public void m() {
+        SharedPreferences.Editor edit = this.f55785i.getPreferences(0).edit();
+        edit.putBoolean(this.f55785i.getString(R.string.is_dda_popup_disabled), true);
+        edit.apply();
+    }
+
+    @Override // su2.a
+    public void n(String str) {
+        f();
+        gv.a aVar = new gv.a(an2.g.J().w());
+        this.f55783g = aVar;
+        aVar.a(this.f55778b.i(), this.f55778b.B(), str, ik2.a.f34419e, String.valueOf((int) ik2.a.f34418d), gv.a.f30438b, new a(str), new av.a() { // from class: su2.b
+            @Override // av.a
+            public final void a(String str2, String str3) {
+                d.b(str2, str3);
+            }
+        });
+    }
+
+    @Override // su2.a
+    public void o(String str) {
+        nk2.d.f46149c.start();
+        vu2.a aVar = new vu2.a(str);
+        aVar.e(this.f55786j);
+        if (s43.b.z0().S0()) {
+            return;
+        }
+        this.f55779c.e(aVar, this.f55789m);
+    }
+}
+
+package gv;
+
+import br.com.santander.module.ddslib.common.exception.DdsException;
+import com.google.common.net.HttpHeaders;
+import com.google.firebase.remoteconfig.RemoteConfigConstants;
+import d.f;
+import dv.c;
+import kotlin.Metadata;
+import org.jetbrains.annotations.NotNull;
+import org.json.JSONObject;
+import w5.e;
+import xa3.l0;
+import xa3.w;
+
+/* compiled from: DDSService.kt */
+@Metadata(bv = {}, d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u0001:\u0001\u000fB\u000f\u0012\u0006\u0010\u0011\u001a\u00020\u0010¢\u0006\u0004\b\u0012\u0010\u0013JL\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0004\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00022\u0006\u0010\u0007\u001a\u00020\u00022\u0006\u0010\b\u001a\u00020\u00022\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\n0\t2\u0006\u0010\r\u001a\u00020\f¨\u0006\u0014"}, d2 = {"Lgv/a;", "", "", "uuid", "sessionToken", e.V7, RemoteConfigConstants.RequestFieldKey.APP_VERSION, "appVersionCode", "deviceSystemName", "Lav/b;", "Ldv/a;", "responseCallback", "Lav/a;", "analyticsCallback", "Lba3/f2;", "a", "Lz9/a;", "connector", "<init>", "(Lz9/a;)V", "dds_release"}, k = 1, mv = {1, 4, 2})
+/* loaded from: classes3.dex */
+public final class a {
+    @NotNull
+
+    /* renamed from: b  reason: collision with root package name */
+    public static final String f30438b = "ANDROID";
+    @NotNull
+
+    /* renamed from: c  reason: collision with root package name */
+    public static final C1115a f30439c = new C1115a(null);
+
+    /* renamed from: a  reason: collision with root package name */
+    public final cv.a f30440a;
+
+    /* compiled from: DDSService.kt */
+    @Metadata(bv = {}, d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0005\u0010\u0006R\u0014\u0010\u0003\u001a\u00020\u00028\u0006X\u0086T¢\u0006\u0006\n\u0004\b\u0003\u0010\u0004¨\u0006\u0007"}, d2 = {"Lgv/a$a;", "", "", "DDS_ANDROID_OS_NAME", "Ljava/lang/String;", "<init>", "()V", "dds_release"}, k = 1, mv = {1, 4, 2})
+    /* renamed from: gv.a$a  reason: collision with other inner class name */
+    /* loaded from: classes3.dex */
+    public static final class C1115a {
+        public C1115a() {
+        }
+
+        public /* synthetic */ C1115a(w wVar) {
+            this();
+        }
+    }
+
+    /* compiled from: DDSService.kt */
+    @Metadata(bv = {}, d1 = {"\u0000\u001d\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003*\u0001\u0000\b\n\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001J\u0010\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0003\u001a\u00020\u0002H\u0016J\u0010\u0010\b\u001a\u00020\u00042\u0006\u0010\u0007\u001a\u00020\u0006H\u0016¨\u0006\t"}, d2 = {"gv/a$b", "Lav/b;", "Ldv/a;", "environment", "Lba3/f2;", "b", "Lbr/com/santander/module/ddslib/common/exception/DdsException;", "exception", "a", "dds_release"}, k = 1, mv = {1, 4, 2})
+    /* loaded from: classes3.dex */
+    public static final class b implements av.b<dv.a> {
+
+        /* renamed from: a  reason: collision with root package name */
+        public final /* synthetic */ av.b f30441a;
+
+        public b(av.b bVar) {
+            this.f30441a = bVar;
+        }
+
+        @Override // av.b
+        public void a(@NotNull DdsException ddsException) {
+            l0.p(ddsException, "exception");
+            this.f30441a.a(ddsException);
+        }
+
+        @Override // av.b
+        /* renamed from: b */
+        public void onSuccess(@NotNull dv.a aVar) {
+            l0.p(aVar, "environment");
+            this.f30441a.onSuccess(aVar);
+        }
+    }
+
+    public a(@NotNull z9.a aVar) {
+        l0.p(aVar, "connector");
+        this.f30440a = new cv.a(new ev.a(aVar));
+    }
+
+    public final void a(@NotNull String str, @NotNull String str2, @NotNull String str3, @NotNull String str4, @NotNull String str5, @NotNull String str6, @NotNull av.b<dv.a> bVar, @NotNull av.a aVar) {
+        l0.p(str, "uuid");
+        l0.p(str2, "sessionToken");
+        l0.p(str3, "documentNumber");
+        l0.p(str4, "appVersion");
+        l0.p(str5, "appVersionCode");
+        l0.p(str6, "deviceSystemName");
+        l0.p(bVar, "responseCallback");
+        l0.p(aVar, "analyticsCallback");
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("Content-Type", "application/json");
+            jSONObject.put("Accept", "application/json");
+            jSONObject.put("Accept-Encoding", "gzip");
+            jSONObject.put("Content-Encoding", "gzip");
+            jSONObject.put("x-uid", str);
+            jSONObject.put("x-authorization-token", str2);
+        } catch (Exception e14) {
+            f.d(e14);
+        }
+        this.f30440a.a(jSONObject, new c(str3, str4, str5, str6), new b(bVar), aVar);
+    }
+}
+
+package ev;
+
+import br.com.santander.module.ddslib.common.exception.DdsException;
+import com.google.gson.Gson;
+import dv.c;
+import dv.d;
+import kotlin.Metadata;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.json.JSONObject;
+import s9.h;
+import xa3.l0;
+import xa3.w;
+
+/* compiled from: DDSRepository.kt */
+@Metadata(bv = {}, d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u0001:\u0001\nB\u000f\u0012\u0006\u0010\f\u001a\u00020\u000b¢\u0006\u0004\b\r\u0010\u000eJ$\u0010\n\u001a\u00020\t2\u0006\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u00042\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¨\u0006\u000f"}, d2 = {"Lev/a;", "", "Lorg/json/JSONObject;", "header", "Ldv/c;", "environmentRequest", "Lav/b;", "Ldv/a;", "responseCallback", "Lba3/f2;", "a", "Lz9/a;", "connector", "<init>", "(Lz9/a;)V", "dds_release"}, k = 1, mv = {1, 4, 2})
+/* loaded from: classes3.dex */
+public final class a {
+
+    /* renamed from: b  reason: collision with root package name */
+    public static final int f27076b = -1;
+
+    /* renamed from: c  reason: collision with root package name */
+    public static final int f27077c = 504;
+    @NotNull
+
+    /* renamed from: d  reason: collision with root package name */
+    public static final String f27078d = "Ocorreu um erro de comunicação. Por favor, tente novamente em instantes.";
+    @NotNull
+
+    /* renamed from: e  reason: collision with root package name */
+    public static final C0953a f27079e = new C0953a(null);
+
+    /* renamed from: a  reason: collision with root package name */
+    public final z9.a f27080a;
+
+    /* compiled from: DDSRepository.kt */
+    @Metadata(bv = {}, d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\t\u0010\nR\u0014\u0010\u0003\u001a\u00020\u00028\u0006X\u0086T¢\u0006\u0006\n\u0004\b\u0003\u0010\u0004R\u0014\u0010\u0005\u001a\u00020\u00028\u0006X\u0086T¢\u0006\u0006\n\u0004\b\u0005\u0010\u0004R\u0014\u0010\u0007\u001a\u00020\u00068\u0006X\u0086T¢\u0006\u0006\n\u0004\b\u0007\u0010\b¨\u0006\u000b"}, d2 = {"Lev/a$a;", "", "", "CONNECTOR_CODE_GENERIC_ERROR", "I", "CONNECTOR_CODE_SERVER_TIMEOUT", "", "MESSAGE_SEVER_NOT_RESPONSE", "Ljava/lang/String;", "<init>", "()V", "dds_release"}, k = 1, mv = {1, 4, 2})
+    /* renamed from: ev.a$a  reason: collision with other inner class name */
+    /* loaded from: classes3.dex */
+    public static final class C0953a {
+        public C0953a() {
+        }
+
+        public /* synthetic */ C0953a(w wVar) {
+            this();
+        }
+    }
+
+    /* compiled from: DDSRepository.kt */
+    @Metadata(bv = {}, d1 = {"\u0000\u0017\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003*\u0001\u0000\b\n\u0018\u00002\u00020\u0001J\u0012\u0010\u0005\u001a\u00020\u00042\b\u0010\u0003\u001a\u0004\u0018\u00010\u0002H\u0016J\u0012\u0010\u0006\u001a\u00020\u00042\b\u0010\u0003\u001a\u0004\u0018\u00010\u0002H\u0016¨\u0006\u0007"}, d2 = {"ev/a$b", "Lq9/b;", "Ls9/h;", "hubResponse", "Lba3/f2;", "onSuccess", "onFailure", "dds_release"}, k = 1, mv = {1, 4, 2})
+    /* loaded from: classes3.dex */
+    public static final class b implements q9.b {
+
+        /* renamed from: a  reason: collision with root package name */
+        public final /* synthetic */ av.b f27081a;
+
+        public b(av.b bVar) {
+            this.f27081a = bVar;
+        }
+
+        @Override // q9.b
+        public void onFailure(@Nullable h hVar) {
+            Integer e14 = hVar != null ? hVar.e() : null;
+            if (e14 != null && e14.intValue() == -1) {
+                this.f27081a.a(new DdsException("Ocorreu um erro de comunicação. Por favor, tente novamente em instantes."));
+            } else if (e14 != null && e14.intValue() == 504) {
+                this.f27081a.a(new DdsException("Ocorreu um erro de comunicação. Por favor, tente novamente em instantes."));
+            } else {
+                try {
+                    this.f27081a.a(new DdsException(((d) bv.b.f16437a.a().fromJson(String.valueOf(hVar != null ? hVar.d() : null), (Class<Object>) d.class)).h()));
+                } catch (Exception unused) {
+                    this.f27081a.a(new DdsException("Ocorreu um erro de comunicação. Por favor, tente novamente em instantes."));
+                }
+            }
+        }
+
+        @Override // q9.b
+        public void onSuccess(@Nullable h hVar) {
+            dv.a aVar = (dv.a) bv.b.f16437a.a().fromJson(String.valueOf(hVar != null ? hVar.d() : null), (Class<Object>) dv.a.class);
+            av.b bVar = this.f27081a;
+            l0.o(aVar, "environment");
+            bVar.onSuccess(aVar);
+        }
+    }
+
+    public a(@NotNull z9.a aVar) {
+        l0.p(aVar, "connector");
+        this.f27080a = aVar;
+    }
+
+    public final void a(@NotNull JSONObject jSONObject, @NotNull c cVar, @NotNull av.b<dv.a> bVar) {
+        l0.p(jSONObject, "header");
+        l0.p(cVar, "environmentRequest");
+        l0.p(bVar, "responseCallback");
+        fv.a aVar = new fv.a();
+        aVar.setHeaders(jSONObject);
+        aVar.setBody(new JSONObject(new Gson().toJson(cVar)));
+        this.f27080a.t(aVar, new b(bVar));
+    }
+}
