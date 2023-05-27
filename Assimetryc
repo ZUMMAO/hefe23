@@ -1,0 +1,2504 @@
+package br.com.original.common.cryptography;
+
+@kotlin.Metadata(m7317a = {1, 1, 15}, m7316d = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0012\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\bÆ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u001a\u0010\b\u001a\u0004\u0018\u00010\u00042\u0006\u0010\t\u001a\u00020\u00042\b\u0010\n\u001a\u0004\u0018\u00010\u000bJ\u0018\u0010\b\u001a\u0004\u0018\u00010\u00042\u0006\u0010\t\u001a\u00020\u00042\u0006\u0010\n\u001a\u00020\u0004J\u001a\u0010\f\u001a\u0004\u0018\u00010\u00042\u0006\u0010\t\u001a\u00020\u00042\b\u0010\r\u001a\u0004\u0018\u00010\u000eJ\u0018\u0010\f\u001a\u0004\u0018\u00010\u00042\u0006\u0010\t\u001a\u00020\u00042\u0006\u0010\r\u001a\u00020\u000fJ\u0018\u0010\f\u001a\u0004\u0018\u00010\u00042\u0006\u0010\t\u001a\u00020\u00042\u0006\u0010\r\u001a\u00020\u0004J\u0006\u0010\u0010\u001a\u00020\u0011J\u0010\u0010\u0012\u001a\n \u0014*\u0004\u0018\u00010\u00130\u0013H\u0002J\u0012\u0010\u0015\u001a\u0004\u0018\u00010\u000b2\u0006\u0010\t\u001a\u00020\u0004H\u0002J\u0012\u0010\u0016\u001a\u0004\u0018\u00010\u000e2\u0006\u0010\t\u001a\u00020\u000fH\u0002J\u0012\u0010\u0017\u001a\u0004\u0018\u00010\u000e2\u0006\u0010\t\u001a\u00020\u0004H\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, m7315e = {"Lbr/com/original/common/cryptography/AsymmetricCryptography;", "", "()V", "ALGORITHM", "", "CRYPTO_BITS", "", "base64Flag", "decrypt", "value", "privateKey", "Ljava/security/PrivateKey;", "encrypt", "publicKey", "Ljava/security/PublicKey;", "", "generateKeyPair", "Ljava/security/KeyPair;", "getCipher", "Ljavax/crypto/Cipher;", "kotlin.jvm.PlatformType", "privateKeyFromString", "publicKeyFromByteArray", "publicKeyFromString", "common_prodRelease"})
+/* loaded from: classes3.dex */
+public final class AsymmetricCryptography {
+    private static int $r8$backportedMethods$utility$Double$1$hashCode = 0;
+    private static final java.lang.String ALGORITHM = "RSA";
+    private static final int CRYPTO_BITS = 2048;
+    public static final br.com.original.common.cryptography.AsymmetricCryptography INSTANCE = null;
+    private static int SuppressLint = 1;
+
+    /* renamed from: a */
+    private static byte[] f20234a = null;
+    private static final int base64Flag = 2;
+
+    /* renamed from: c */
+    private static int f20235c;
+
+    /* renamed from: d */
+    private static int f20236d;
+
+    /* renamed from: e */
+    private static char[] f20237e;
+    private static short[] extraCallback;
+    private static int value;
+
+    static {
+            m11360d()     // Catch: java.lang.NullPointerException -> L2d
+            br.com.original.common.cryptography.AsymmetricCryptography r0 = new br.com.original.common.cryptography.AsymmetricCryptography     // Catch: java.lang.NullPointerException -> L2d
+            r0.<init>()     // Catch: java.lang.NullPointerException -> L2d
+            br.com.original.common.cryptography.AsymmetricCryptography.INSTANCE = r0     // Catch: java.lang.IllegalStateException -> L2b java.lang.NullPointerException -> L2d
+            int r0 = br.com.original.common.cryptography.AsymmetricCryptography.value     // Catch: java.lang.NumberFormatException -> L29
+            r1 = r0 & 45
+            r0 = r0 | 45
+            int r1 = r1 + r0
+            int r0 = r1 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r0     // Catch: java.lang.IllegalArgumentException -> L27
+            int r1 = r1 % 2
+            r0 = 1
+            if (r1 != 0) goto L1c
+            r1 = 0
+            goto L1d
+        L1c:
+            r1 = 1
+        L1d:
+            if (r1 == r0) goto L26
+            r0 = 0
+            super.hashCode()     // Catch: java.lang.Throwable -> L24
+            return
+        L24:
+            r0 = move-exception
+            throw r0
+        L26:
+            return
+        L27:
+            r0 = move-exception
+            goto L2a
+        L29:
+            r0 = move-exception
+        L2a:
+            throw r0
+        L2b:
+            r0 = move-exception
+            goto L2e
+        L2d:
+            r0 = move-exception
+        L2e:
+            throw r0
+    }
+
+    private AsymmetricCryptography() {
+            r0 = this;
+            r0.<init>()
+            return
+    }
+
+    /* renamed from: c */
+    private static java.lang.String m11361c(short r6, int r7, byte r8, int r9, int r10) {
+            java.lang.StringBuilder r0 = new java.lang.StringBuilder
+            r0.<init>()
+            int r1 = br.com.original.common.cryptography.AsymmetricCryptography.f20235c
+            int r7 = r7 + r1
+            r1 = -1
+            r2 = 0
+            r3 = 1
+            if (r7 != r1) goto Lf
+            r1 = 1
+            goto L10
+        Lf:
+            r1 = 0
+        L10:
+            if (r1 == 0) goto L42
+            int r7 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            int r7 = r7 + 31
+            int r4 = r7 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r4
+            int r7 = r7 % 2
+            byte[] r7 = br.com.original.common.cryptography.AsymmetricCryptography.f20234a
+            if (r7 == 0) goto L2a
+            int r4 = br.com.original.common.cryptography.AsymmetricCryptography.$r8$backportedMethods$utility$Double$1$hashCode
+            int r4 = r4 + r9
+            r7 = r7[r4]
+            int r4 = br.com.original.common.cryptography.AsymmetricCryptography.f20235c
+            int r7 = r7 + r4
+            byte r7 = (byte) r7
+            goto L42
+        L2a:
+            short[] r7 = br.com.original.common.cryptography.AsymmetricCryptography.extraCallback     // Catch: java.lang.Exception -> L40
+            int r4 = br.com.original.common.cryptography.AsymmetricCryptography.$r8$backportedMethods$utility$Double$1$hashCode     // Catch: java.lang.Exception -> L40
+            int r4 = r4 + r9
+            short r7 = r7[r4]     // Catch: java.lang.Exception -> L40
+            int r4 = br.com.original.common.cryptography.AsymmetricCryptography.f20235c     // Catch: java.lang.Exception -> L40
+            int r7 = r7 + r4
+            short r7 = (short) r7
+            int r4 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            int r4 = r4 + 101
+            int r5 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r5
+            int r4 = r4 % 2
+            goto L42
+        L40:
+            r6 = move-exception
+            throw r6
+        L42:
+            if (r7 <= 0) goto Lb0
+            int r4 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            int r4 = r4 + 9
+            int r5 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r5
+            int r4 = r4 % 2
+            if (r4 != 0) goto L5f
+            int r9 = r9 - r7
+            int r9 = r9 + (-4)
+            int r4 = br.com.original.common.cryptography.AsymmetricCryptography.$r8$backportedMethods$utility$Double$1$hashCode
+            int r9 = r9 * r4
+            if (r1 == 0) goto L5b
+            r1 = 0
+            goto L5c
+        L5b:
+            r1 = 1
+        L5c:
+            if (r1 == 0) goto L67
+            goto L69
+        L5f:
+            int r9 = r9 + r7
+            int r9 = r9 + (-2)
+            int r4 = br.com.original.common.cryptography.AsymmetricCryptography.$r8$backportedMethods$utility$Double$1$hashCode
+            int r9 = r9 + r4
+            if (r1 == 0) goto L69
+        L67:
+            r1 = 1
+            goto L6a
+        L69:
+            r1 = 0
+        L6a:
+            int r9 = r9 + r1
+            int r1 = br.com.original.common.cryptography.AsymmetricCryptography.f20236d
+            int r10 = r10 + r1
+            char r10 = (char) r10
+            r0.append(r10)
+            r1 = 1
+        L73:
+            if (r1 >= r7) goto L77
+            r4 = 0
+            goto L78
+        L77:
+            r4 = 1
+        L78:
+            if (r4 == 0) goto L7b
+            goto Lb0
+        L7b:
+            int r4 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            int r4 = r4 + 119
+            int r5 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r5
+            int r4 = r4 % 2
+            byte[] r4 = br.com.original.common.cryptography.AsymmetricCryptography.f20234a     // Catch: java.lang.Exception -> Lae
+            r5 = 28
+            if (r4 == 0) goto L8e
+            r4 = 81
+            goto L90
+        L8e:
+            r4 = 28
+        L90:
+            if (r4 == r5) goto L9b
+            byte[] r4 = br.com.original.common.cryptography.AsymmetricCryptography.f20234a     // Catch: java.lang.Exception -> Lae
+            int r5 = r9 + (-1)
+            r9 = r4[r9]
+            int r9 = r9 + r6
+            byte r9 = (byte) r9
+            goto La3
+        L9b:
+            short[] r4 = br.com.original.common.cryptography.AsymmetricCryptography.extraCallback
+            int r5 = r9 + (-1)
+            short r9 = r4[r9]
+            int r9 = r9 + r6
+            short r9 = (short) r9
+        La3:
+            r9 = r9 ^ r8
+            int r10 = r10 + r9
+            char r9 = (char) r10
+            r10 = r9
+            r9 = r5
+            r0.append(r10)
+            int r1 = r1 + 1
+            goto L73
+        Lae:
+            r6 = move-exception
+            throw r6
+        Lb0:
+            java.lang.String r6 = r0.toString()
+            return r6
+    }
+
+    /* renamed from: d */
+    private static java.lang.String m11359d(byte[] r11, int[] r12, boolean r13) {
+            r0 = 0
+            r1 = r12[r0]
+            r2 = 1
+            r3 = r12[r2]
+            r4 = 2
+            r5 = r12[r4]
+            r6 = 3
+            r6 = r12[r6]
+            char[] r7 = br.com.original.common.cryptography.AsymmetricCryptography.f20237e
+            char[] r8 = new char[r3]
+            java.lang.System.arraycopy(r7, r1, r8, r0, r3)
+            if (r11 == 0) goto L17
+            r1 = 1
+            goto L18
+        L17:
+            r1 = 0
+        L18:
+            if (r1 == 0) goto L3a
+            char[] r1 = new char[r3]
+            r7 = 0
+            r9 = 0
+        L1e:
+            if (r7 >= r3) goto L39
+            r10 = r11[r7]
+            if (r10 != r2) goto L2d
+            char r10 = r8[r7]
+            int r10 = r10 << r2
+            int r10 = r10 + r2
+            int r10 = r10 - r9
+            char r9 = (char) r10
+            r1[r7] = r9
+            goto L34
+        L2d:
+            char r10 = r8[r7]
+            int r10 = r10 << r2
+            int r10 = r10 - r9
+            char r9 = (char) r10
+            r1[r7] = r9
+        L34:
+            char r9 = r1[r7]
+            int r7 = r7 + 1
+            goto L1e
+        L39:
+            r8 = r1
+        L3a:
+            if (r6 <= 0) goto L49
+            char[] r11 = new char[r3]
+            java.lang.System.arraycopy(r8, r0, r11, r0, r3)
+            int r1 = r3 - r6
+            java.lang.System.arraycopy(r11, r0, r8, r1, r6)
+            java.lang.System.arraycopy(r11, r6, r8, r0, r1)
+        L49:
+            r11 = 41
+            if (r13 == 0) goto L50
+            r13 = 41
+            goto L52
+        L50:
+            r13 = 35
+        L52:
+            if (r13 == r11) goto L55
+            goto L65
+        L55:
+            char[] r11 = new char[r3]
+            r13 = 0
+        L58:
+            if (r13 >= r3) goto L64
+            int r1 = r3 - r13
+            int r1 = r1 - r2
+            char r1 = r8[r1]
+            r11[r13] = r1
+            int r13 = r13 + 1
+            goto L58
+        L64:
+            r8 = r11
+        L65:
+            if (r5 <= 0) goto L68
+            goto L69
+        L68:
+            r2 = 0
+        L69:
+            if (r2 == 0) goto L96
+        L6b:
+            r11 = 80
+            if (r0 >= r3) goto L72
+            r13 = 75
+            goto L74
+        L72:
+            r13 = 80
+        L74:
+            if (r13 == r11) goto L96
+            int r11 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            int r11 = r11 + 91
+            int r13 = r11 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r13
+            int r11 = r11 % r4
+            char r11 = r8[r0]
+            r13 = r12[r4]
+            int r11 = r11 - r13
+            char r11 = (char) r11
+            r8[r0] = r11
+            int r0 = r0 + 1
+            int r11 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint     // Catch: java.lang.Exception -> L94
+            int r11 = r11 + 85
+            int r13 = r11 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r13     // Catch: java.lang.Exception -> L94
+            int r11 = r11 % 2
+            goto L6b
+        L94:
+            r11 = move-exception
+            throw r11
+        L96:
+            java.lang.String r11 = new java.lang.String
+            r11.<init>(r8)
+            int r12 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            int r12 = r12 + 87
+            int r13 = r12 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r13
+            int r12 = r12 % r4
+            if (r12 != 0) goto Lad
+            r12 = 0
+            super.hashCode()     // Catch: java.lang.Throwable -> Lab
+            return r11
+        Lab:
+            r11 = move-exception
+            throw r11
+        Lad:
+            return r11
+    }
+
+    /* renamed from: d */
+    static void m11360d() {
+            r0 = 229(0xe5, float:3.21E-43)
+            char[] r0 = new char[r0]
+            r0 = {x0022: FILL_ARRAY_DATA  , data: [51, 106, 107, 102, 100, 98, 88, 64, 59, 70, 74, 88, 105, 87, 57, 57, 68, 77, 93, 110, 110, 96, 83, 74, 67, 72, 63, 56, 66, 68, 58, 56, 74, 82, 71, 143, 174, 202, 204, 191, 163, 155, 179, 210, 208, 199, 167, 140, 174, 211, 214, 204, 209, 181, 172, 202, 207, 207, 202, 202, 175, 151, 155, 179, 210, 208, 183, 155, 176, 204, 205, 209, 189, 192, 207, 175, 182, 209, 204, 210, 210, 204, 37, 87, 102, 106, 103, 107, 114, 116, 111, 89, 103, 104, 65, 134, 135, 120, 134, 133, 116, 123, 86, 119, 133, 116, 119, 129, 116, 135, 102, 75, 114, 20, 78, 110, 104, 110, 73, 64, 106, 73, 69, 101, 107, 107, 71, 77, 102, 103, 106, 74, 64, 99, 115, 109, 107, 106, 72, 43, 74, 102, 108, 91, 93, 118, 108, 108, 77, 69, 101, 100, 105, 114, 108, 108, 78, 111, 222, 229, 256, 263, 258, 265, 246, 261, 296, 289, 289, 295, 286, 281, 266, 264, 288, 286, 279, 286, 284, 287, 280, 242, 4316, 4329, 269, 294, 262, 254, 290, 293, 283, 288, 260, 255, 283, 284, 288, 268, 271, 286, 254, 261, 288, 283, 289, 289, 283, 113, 226, 229, 229, 231, 229, 230, 237, 236, 204, 198, 226, 229, 216, 212, 235, 224, 212, 225, 233, 201, 164} // fill-array
+            br.com.original.common.cryptography.AsymmetricCryptography.f20237e = r0
+            r0 = 1125762116(0x4319c444, float:153.76666)
+            br.com.original.common.cryptography.AsymmetricCryptography.$r8$backportedMethods$utility$Double$1$hashCode = r0
+            r0 = 50
+            byte[] r0 = new byte[r0]
+            r0 = {x010c: FILL_ARRAY_DATA  , data: [-68, -10, -70, 45, -38, -58, 50, 9, 38, -58, 51, 118, 44, -5, 40, -63, -65, 31, -126, -9, -71, 45, -60, 50, -71, -22, 46, 50, 9, 38, -58, -45, -97, -117, -8, -95, -19, -10, -12, -44, -90, -125, -119, -43, -34, -128, -40, 122, -28, 113} // fill-array
+            br.com.original.common.cryptography.AsymmetricCryptography.f20234a = r0
+            r0 = 100
+            br.com.original.common.cryptography.AsymmetricCryptography.f20235c = r0
+            r0 = -1364036284(0xffffffffaeb27544, float:-8.1153334E-11)
+            br.com.original.common.cryptography.AsymmetricCryptography.f20236d = r0
+            return
+    }
+
+    private static javax.crypto.Cipher getCipher() {
+            int r0 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r1 = r0 & 67
+            r2 = r1 ^ (-1)
+            r0 = r0 | 67
+            r0 = r0 & r2
+            r2 = 1
+            int r1 = r1 << r2
+            r3 = r0 | r1
+            int r3 = r3 << r2
+            r0 = r0 ^ r1
+            int r3 = r3 - r0
+            int r0 = r3 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r0
+            int r3 = r3 % 2
+            r0 = 34
+            byte[] r0 = new byte[r0]
+            r0 = {x006a: FILL_ARRAY_DATA  , data: [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1} // fill-array
+            r1 = 4
+            int[] r1 = new int[r1]
+            r1 = {x0080: FILL_ARRAY_DATA  , data: [0, 34, 0, 0} // fill-array
+            r3 = 0
+            boolean r4 = android.view.Gravity.isHorizontal(r3)
+            r5 = r4 & 1
+            r6 = r5 & 0
+            r5 = r5 ^ (-1)
+            r5 = r5 & (-1)
+            r5 = r5 | r6
+            r4 = r4 | r2
+            r4 = r4 & r5
+            java.lang.String r0 = m11359d(r0, r1, r4)
+            int r1 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r4 = r1 ^ 35
+            r1 = r1 & 35
+            r1 = r1 | r4
+            int r1 = r1 << r2
+            int r4 = -r4
+            r5 = r1 & r4
+            r1 = r1 | r4
+            int r5 = r5 + r1
+            int r1 = r5 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r1
+            int r5 = r5 % 2
+            java.lang.String r0 = r0.intern()
+            javax.crypto.Cipher r0 = javax.crypto.Cipher.getInstance(r0)
+            int r1 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r4 = r1 & 69
+            r1 = r1 | 69
+            int r4 = r4 + r1
+            int r1 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r1
+            int r4 = r4 % 2
+            if (r4 == 0) goto L62
+            r2 = 0
+        L62:
+            if (r2 == 0) goto L65
+            return r0
+        L65:
+            r1 = 0
+            int r1 = r1.length     // Catch: java.lang.Throwable -> L68
+            return r0
+        L68:
+            r0 = move-exception
+            throw r0
+    }
+
+    private static java.security.PrivateKey privateKeyFromString(java.lang.String r14) {
+            int r0 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r1 = 7
+            r2 = r0 & (-8)
+            r3 = r0 ^ (-1)
+            r3 = r3 & r1
+            r2 = r2 | r3
+            r0 = r0 & r1
+            r1 = 1
+            int r0 = r0 << r1
+            r3 = r2 & r0
+            r0 = r0 | r2
+            int r3 = r3 + r0
+            int r0 = r3 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r0
+            r0 = 2
+            int r3 = r3 % r0
+            r2 = 69
+            if (r3 == 0) goto L1d
+            r3 = 69
+            goto L1f
+        L1d:
+            r3 = 54
+        L1f:
+            r4 = -101(0xffffffffffffff9b, float:NaN)
+            r5 = 0
+            r6 = 0
+            r8 = 0
+            if (r3 == r2) goto L46
+            byte[] r14 = android.util.Base64.decode(r14, r0)     // Catch: java.lang.Throwable -> L1b3
+            long r2 = android.os.SystemClock.elapsedRealtime()     // Catch: java.lang.Throwable -> L1b3
+            int r9 = (r2 > r6 ? 1 : (r2 == r6 ? 0 : -1))
+            int r2 = -r9
+            r3 = r2 ^ (-1)
+            r3 = r3 & (-117(0xffffffffffffff8b, float:NaN))
+            r9 = r2 & 116(0x74, float:1.63E-43)
+            r3 = r3 | r9
+            r2 = r2 & (-117(0xffffffffffffff8b, float:NaN))
+            int r2 = r2 << r1
+            int r2 = -r2
+            int r2 = -r2
+            r2 = r2 ^ (-1)
+            int r3 = r3 - r2
+            int r3 = r3 - r1
+            short r2 = (short) r3     // Catch: java.lang.Throwable -> L1b3
+            r3 = -101(0xffffffffffffff9b, float:NaN)
+            goto L59
+        L46:
+            r2 = 5
+            byte[] r14 = android.util.Base64.decode(r14, r2)     // Catch: java.lang.Throwable -> L1b3
+            long r2 = android.os.SystemClock.elapsedRealtime()     // Catch: java.lang.Throwable -> L1b3
+            int r9 = (r2 > r6 ? 1 : (r2 == r6 ? 0 : -1))
+            r2 = r9 & 1
+            r3 = r9 | 1
+            int r2 = r2 + r3
+            short r2 = (short) r2
+            r3 = 74
+        L59:
+            int r9 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r10 = 109(0x6d, float:1.53E-43)
+            r11 = r9 & (-110(0xffffffffffffff92, float:NaN))
+            r12 = r9 ^ (-1)
+            r12 = r12 & r10
+            r11 = r11 | r12
+            r9 = r9 & r10
+            int r9 = r9 << r1
+            int r9 = -r9
+            int r9 = -r9
+            r9 = r9 ^ (-1)
+            int r11 = r11 - r9
+            int r11 = r11 - r1
+            int r9 = r11 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r9
+            int r11 = r11 % r0
+            int r9 = android.os.Process.myPid()     // Catch: java.lang.Throwable -> L1b3
+            int r9 = r9 >> 22
+            int r9 = -r9
+            r10 = r3 & r9
+            r3 = r3 ^ r9
+            r3 = r3 | r10
+            r9 = r10 | r3
+            int r9 = r9 << r1
+            r3 = r3 ^ r10
+            int r9 = r9 - r3
+            int r3 = android.widget.ExpandableListView.getPackedPositionType(r6)     // Catch: java.lang.Throwable -> L1b3
+            r10 = r3 | 66
+            int r11 = r10 << 1
+            r3 = r3 & 66
+            r3 = r3 ^ (-1)
+            r3 = r3 & r10
+            int r11 = r11 - r3
+            byte r3 = (byte) r11
+            r10 = -1125762115(0xffffffffbce63bbd, float:-0.028104657)
+            int r11 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r12 = r11 ^ 21
+            r11 = r11 & 21
+            r11 = r11 | r12
+            int r11 = r11 << r1
+            int r12 = -r12
+            r13 = r11 | r12
+            int r13 = r13 << r1
+            r11 = r11 ^ r12
+            int r13 = r13 - r11
+            int r11 = r13 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r11
+            int r13 = r13 % r0
+            int r6 = android.widget.ExpandableListView.getPackedPositionChild(r6)     // Catch: java.lang.Throwable -> L1b3
+            r6 = r6 ^ (-1)
+            int r6 = -r6
+            r7 = r6 ^ r10
+            r6 = r6 & r10
+            int r6 = r6 << r1
+            int r7 = r7 + r6
+            r6 = r7 | (-1)
+            int r6 = r6 << r1
+            r7 = r7 ^ (-1)
+            int r6 = r6 - r7
+            r7 = 1364036350(0x514d8afe, float:5.5175012E10)
+            r10 = 0
+            float r11 = android.graphics.PointF.length(r10, r10)     // Catch: java.lang.Throwable -> L1b3
+            int r10 = (r11 > r10 ? 1 : (r11 == r10 ? 0 : -1))
+            int r10 = r10 + r7
+            java.lang.String r2 = m11361c(r2, r9, r3, r6, r10)     // Catch: java.lang.Throwable -> L1b3
+            java.lang.String r2 = r2.intern()     // Catch: java.lang.Throwable -> L1b3
+            kotlin.jvm.internal.Intrinsics.$r8$backportedMethods$utility$Double$1$hashCode(r14, r2)     // Catch: java.lang.Throwable -> L1b3
+            java.security.spec.PKCS8EncodedKeySpec r2 = new java.security.spec.PKCS8EncodedKeySpec     // Catch: java.lang.Throwable -> L1b3
+            r2.<init>(r14)     // Catch: java.lang.Throwable -> L1b3
+            r14 = -74
+            int r3 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            int r3 = r3 + 112
+            int r3 = r3 - r1
+            int r6 = r3 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r6
+            int r3 = r3 % r0
+            if (r3 == 0) goto Le2
+            r3 = 1
+            goto Le3
+        Le2:
+            r3 = 0
+        Le3:
+            r6 = 24
+            if (r3 == r1) goto L115
+            int r3 = android.view.View.getDefaultSize(r8, r8)     // Catch: java.lang.Throwable -> L1b3
+            int r3 = -r3
+            r7 = r3 & 0
+            r3 = r3 ^ (-1)
+            r3 = r3 & (-1)
+            r3 = r3 | r7
+            int r3 = -r3
+            r7 = r3 | (-74)
+            int r7 = r7 << r1
+            r14 = r14 ^ r3
+            int r7 = r7 - r14
+            r14 = r7 ^ (-1)
+            r3 = r7 & (-1)
+            int r3 = r3 << r1
+            int r14 = r14 + r3
+            short r14 = (short) r14     // Catch: java.lang.Throwable -> L1b3
+            int r3 = android.view.ViewConfiguration.getTouchSlop()     // Catch: java.lang.Throwable -> L1b3
+            int r3 = r3 >> 8
+            int r3 = -r3
+            int r3 = -r3
+            r3 = r3 ^ (-1)
+            int r3 = -r3
+            r7 = r3 | (-101(0xffffffffffffff9b, float:NaN))
+            int r7 = r7 << r1
+            r3 = r3 ^ r4
+            int r7 = r7 - r3
+            int r7 = r7 - r8
+            int r7 = r7 - r1
+            r3 = -81
+            goto L127
+        L115:
+            int r3 = android.view.View.getDefaultSize(r8, r1)     // Catch: java.lang.Throwable -> L1b3
+            int r14 = r14 << r3
+            short r14 = (short) r14     // Catch: java.lang.Throwable -> L1b3
+            r3 = 39
+            int r4 = android.view.ViewConfiguration.getTouchSlop()     // Catch: java.lang.Throwable -> L1b3
+            int r4 = r4 >> 18
+            int r7 = r3 >>> r4
+            r3 = 24
+        L127:
+            int r4 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r9 = r4 & 85
+            r10 = r9 ^ (-1)
+            r4 = r4 | 85
+            r4 = r4 & r10
+            int r9 = r9 << r1
+            int r4 = r4 + r9
+            int r9 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r9
+            int r4 = r4 % r0
+            r9 = 14
+            if (r4 != 0) goto L13e
+            r4 = 14
+            goto L140
+        L13e:
+            r4 = 45
+        L140:
+            if (r4 == r9) goto L15a
+            int r4 = android.view.ViewConfiguration.getMaximumDrawingCacheSize()     // Catch: java.lang.Throwable -> L1b3
+            int r4 = r4 >> r6
+            int r4 = -r4
+            r6 = r3 & r4
+            r3 = r3 ^ r4
+            r3 = r3 | r6
+            int r3 = -r3
+            int r3 = -r3
+            r4 = r6 & r3
+            r3 = r3 | r6
+            int r4 = r4 + r3
+            byte r3 = (byte) r4     // Catch: java.lang.Throwable -> L1b3
+            int r4 = android.view.ViewConfiguration.getDoubleTapTimeout()     // Catch: java.lang.Throwable -> L1b3
+            int r4 = r4 >> 16
+            goto L168
+        L15a:
+            int r4 = android.view.ViewConfiguration.getMaximumDrawingCacheSize()     // Catch: java.lang.Throwable -> L1b3
+            int r4 = r4 >> 49
+            int r3 = r3 >>> r4
+            byte r3 = (byte) r3     // Catch: java.lang.Throwable -> L1b3
+            int r4 = android.view.ViewConfiguration.getDoubleTapTimeout()     // Catch: java.lang.Throwable -> L1b3
+            int r4 = r4 >> 104
+        L168:
+            r6 = -1125762084(0xffffffffbce63bdc, float:-0.028104715)
+            int r4 = -r4
+            int r4 = -r4
+            r9 = r6 | r4
+            int r9 = r9 << r1
+            r4 = r4 ^ r6
+            int r9 = r9 - r4
+            r4 = 1364036237(0x514d8a8d, float:5.517455E10)
+            java.lang.String r6 = ""
+            int r6 = android.telephony.PhoneNumberUtils.toaFromString(r6)     // Catch: java.lang.Throwable -> L1b3
+            int r6 = -r6
+            int r6 = -r6
+            r10 = r6 & r4
+            r4 = r4 | r6
+            int r10 = r10 + r4
+            java.lang.String r14 = m11361c(r14, r7, r3, r9, r10)     // Catch: java.lang.Throwable -> L1b3
+            java.lang.String r14 = r14.intern()     // Catch: java.lang.Throwable -> L1b3
+            int r3 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r4 = r3 ^ 46
+            r3 = r3 & 46
+            int r3 = r3 << r1
+            int r4 = r4 + r3
+            r3 = r4 ^ (-1)
+            r4 = r4 & (-1)
+            int r4 = r4 << r1
+            int r3 = r3 + r4
+            int r4 = r3 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r4
+            int r3 = r3 % r0
+            java.security.KeyFactory r14 = java.security.KeyFactory.getInstance(r14)     // Catch: java.lang.Throwable -> L1b3
+            java.security.spec.KeySpec r2 = (java.security.spec.KeySpec) r2     // Catch: java.lang.Throwable -> L1b3
+            java.security.PrivateKey r14 = r14.generatePrivate(r2)     // Catch: java.lang.Throwable -> L1b3
+            int r2 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r3 = r2 & 33
+            r2 = r2 | 33
+            int r3 = r3 + r2
+            int r2 = r3 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r2
+            int r3 = r3 % r0
+            goto L1b4
+        L1b3:
+            r14 = r5
+        L1b4:
+            int r2 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r3 = r2 & 17
+            r2 = r2 ^ 17
+            r2 = r2 | r3
+            int r3 = r3 + r2
+            int r2 = r3 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r2
+            int r3 = r3 % r0
+            if (r3 != 0) goto L1c4
+            r1 = 0
+        L1c4:
+            if (r1 == 0) goto L1c7
+            return r14
+        L1c7:
+            int r0 = r5.length     // Catch: java.lang.Throwable -> L1c9
+            return r14
+        L1c9:
+            r14 = move-exception
+            throw r14
+    }
+
+    private static java.security.PublicKey publicKeyFromByteArray(byte[] r13) {
+            r0 = 0
+            r1 = 2
+            r2 = 1
+            byte[] r13 = android.util.Base64.decode(r13, r1)     // Catch: java.lang.Throwable -> Ld2
+            java.security.spec.X509EncodedKeySpec r3 = new java.security.spec.X509EncodedKeySpec     // Catch: java.lang.Throwable -> Ld2
+            r3.<init>(r13)     // Catch: java.lang.Throwable -> Ld2
+            int r13 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r4 = 5
+            r5 = r13 & (-6)
+            r6 = r13 ^ (-1)
+            r6 = r6 & r4
+            r5 = r5 | r6
+            r13 = r13 & r4
+            int r13 = r13 << r2
+            r4 = r5 & r13
+            r13 = r13 | r5
+            int r4 = r4 + r13
+            int r13 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r13
+            int r4 = r4 % r1
+            r13 = 0
+            int r4 = android.view.KeyEvent.normalizeMetaState(r13)     // Catch: java.lang.Throwable -> Ld2
+            int r4 = -r4
+            r5 = r4 ^ (-74)
+            r4 = r4 & (-74)
+            int r4 = r4 << r2
+            int r4 = -r4
+            int r4 = -r4
+            r6 = r5 | r4
+            int r6 = r6 << r2
+            r4 = r4 ^ r5
+            int r6 = r6 - r4
+            short r4 = (short) r6     // Catch: java.lang.Throwable -> Ld2
+            r5 = -101(0xffffffffffffff9b, float:NaN)
+            r6 = 0
+            int r6 = android.widget.ExpandableListView.getPackedPositionType(r6)     // Catch: java.lang.Throwable -> Ld2
+            int r7 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r8 = r7 & 121(0x79, float:1.7E-43)
+            r7 = r7 ^ 121(0x79, float:1.7E-43)
+            r7 = r7 | r8
+            r9 = r8 | r7
+            int r9 = r9 << r2
+            r7 = r7 ^ r8
+            int r9 = r9 - r7
+            int r7 = r9 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r7
+            int r9 = r9 % r1
+            if (r9 == 0) goto L50
+            r7 = 0
+            goto L51
+        L50:
+            r7 = 1
+        L51:
+            if (r7 == r2) goto L5e
+            int r5 = r5 % r6
+            int r6 = android.view.ViewConfiguration.getMinimumFlingVelocity()     // Catch: java.lang.Throwable -> Ld2
+            int r6 = r6 >> 88
+            int r6 = r6 * 91
+            byte r6 = (byte) r6     // Catch: java.lang.Throwable -> Ld2
+            goto L7d
+        L5e:
+            r7 = r6 ^ (-101(0xffffffffffffff9b, float:NaN))
+            r8 = r6 & (-101(0xffffffffffffff9b, float:NaN))
+            r7 = r7 | r8
+            int r7 = r7 << r2
+            r8 = r6 ^ (-1)
+            r5 = r5 & r8
+            r6 = r6 & 100
+            r5 = r5 | r6
+            int r5 = -r5
+            r6 = r7 ^ r5
+            r5 = r5 & r7
+            int r5 = r5 << r2
+            int r5 = r5 + r6
+            int r6 = android.view.ViewConfiguration.getMinimumFlingVelocity()     // Catch: java.lang.Throwable -> Ld2
+            int r6 = r6 >> 16
+            int r6 = -r6
+            r7 = r6 & (-81)
+            r6 = r6 | (-81)
+            int r7 = r7 + r6
+            byte r6 = (byte) r7     // Catch: java.lang.Throwable -> Ld2
+        L7d:
+            r7 = -1125762084(0xffffffffbce63bdc, float:-0.028104715)
+            int r8 = android.view.ViewConfiguration.getMinimumFlingVelocity()     // Catch: java.lang.Throwable -> Ld2
+            int r8 = r8 >> 16
+            int r7 = r7 + r8
+            r8 = 1364036495(0x514d8b8f, float:5.5175606E10)
+            java.lang.String r9 = ""
+            int r10 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r11 = r10 & 59
+            r12 = r11 ^ (-1)
+            r10 = r10 | 59
+            r10 = r10 & r12
+            int r11 = r11 << r2
+            int r10 = r10 + r11
+            int r11 = r10 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r11
+            int r10 = r10 % r1
+            int r9 = android.telephony.PhoneNumberUtils.toaFromString(r9)     // Catch: java.lang.Throwable -> Ld2
+            int r8 = r8 - r9
+            java.lang.String r4 = m11361c(r4, r5, r6, r7, r8)     // Catch: java.lang.Throwable -> Ld2
+            java.lang.String r4 = r4.intern()     // Catch: java.lang.Throwable -> Ld2
+            java.security.KeyFactory r4 = java.security.KeyFactory.getInstance(r4)     // Catch: java.lang.Throwable -> Ld2
+            int r5 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r6 = r5 & 31
+            r5 = r5 ^ 31
+            r5 = r5 | r6
+            r7 = r6 | r5
+            int r7 = r7 << r2
+            r5 = r5 ^ r6
+            int r7 = r7 - r5
+            int r5 = r7 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r5
+            int r7 = r7 % r1
+            if (r7 != 0) goto Lc1
+            r13 = 1
+        Lc1:
+            if (r13 == 0) goto Lcb
+            java.security.spec.KeySpec r3 = (java.security.spec.KeySpec) r3     // Catch: java.lang.Throwable -> Ld2
+            java.security.PublicKey r13 = r4.generatePublic(r3)     // Catch: java.lang.Throwable -> Ld2
+            int r0 = r0.length     // Catch: java.lang.Throwable -> Ld2
+            goto Ld1
+        Lcb:
+            java.security.spec.KeySpec r3 = (java.security.spec.KeySpec) r3     // Catch: java.lang.Throwable -> Ld2
+            java.security.PublicKey r13 = r4.generatePublic(r3)     // Catch: java.lang.Throwable -> Ld2
+        Ld1:
+            r0 = r13
+        Ld2:
+            int r13 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r3 = r13 ^ 33
+            r4 = r13 & 33
+            r3 = r3 | r4
+            int r3 = r3 << r2
+            r4 = r4 ^ (-1)
+            r13 = r13 | 33
+            r13 = r13 & r4
+            int r13 = -r13
+            r4 = r3 | r13
+            int r2 = r4 << 1
+            r13 = r13 ^ r3
+            int r2 = r2 - r13
+            int r13 = r2 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r13
+            int r2 = r2 % r1
+            return r0
+    }
+
+    private static java.security.PublicKey publicKeyFromString(java.lang.String r14) {
+            r0 = 0
+            r1 = 2
+            r2 = 1
+            byte[] r14 = android.util.Base64.decode(r14, r1)     // Catch: java.lang.Throwable -> Led
+            java.security.spec.X509EncodedKeySpec r3 = new java.security.spec.X509EncodedKeySpec     // Catch: java.lang.Throwable -> Led
+            r3.<init>(r14)     // Catch: java.lang.Throwable -> Led
+            int r14 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r4 = r14 & 3
+            r14 = r14 ^ 3
+            r14 = r14 | r4
+            int r4 = r4 + r14
+            int r14 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r14
+            int r4 = r4 % r1
+            r14 = 53
+            if (r4 == 0) goto L20
+            r4 = 53
+            goto L22
+        L20:
+            r4 = 61
+        L22:
+            r5 = 48
+            if (r4 == r14) goto L3c
+            char r14 = android.text.AndroidCharacter.getMirror(r5)     // Catch: java.lang.Throwable -> Led
+            r4 = r14 ^ (-1)
+            r4 = r4 & (-122(0xffffffffffffff86, float:NaN))
+            r6 = r14 & 121(0x79, float:1.7E-43)
+            r4 = r4 | r6
+            r14 = r14 & (-122(0xffffffffffffff86, float:NaN))
+            int r14 = r14 << r2
+            r6 = r4 & r14
+            r14 = r14 | r4
+            int r6 = r6 + r14
+            short r14 = (short) r6     // Catch: java.lang.Throwable -> Led
+            r4 = -149(0xffffffffffffff6b, float:NaN)
+            goto L48
+        L3c:
+            r14 = 122(0x7a, float:1.71E-43)
+            r4 = 64
+            char r4 = android.text.AndroidCharacter.getMirror(r4)     // Catch: java.lang.Throwable -> Led
+            int r14 = r14 % r4
+            short r14 = (short) r14     // Catch: java.lang.Throwable -> Led
+            r4 = 17156(0x4304, float:2.404E-41)
+        L48:
+            char r6 = android.text.AndroidCharacter.getMirror(r5)     // Catch: java.lang.Throwable -> Led
+            int r6 = -r6
+            int r6 = -r6
+            r7 = r4 & r6
+            r8 = r7 ^ (-1)
+            r4 = r4 | r6
+            r4 = r4 & r8
+            int r6 = r7 << 1
+            int r4 = r4 + r6
+            r6 = -210(0xffffffffffffff2e, float:NaN)
+            int r7 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r8 = r7 & 87
+            r7 = r7 | 87
+            int r7 = -r7
+            int r7 = -r7
+            r9 = r8 | r7
+            int r9 = r9 << r2
+            r7 = r7 ^ r8
+            int r9 = r9 - r7
+            int r7 = r9 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r7
+            int r9 = r9 % r1
+            if (r9 != 0) goto L6f
+            r7 = 1
+            goto L70
+        L6f:
+            r7 = 0
+        L70:
+            java.lang.String r8 = ""
+            if (r7 == r2) goto L86
+            int r7 = android.telephony.PhoneNumberUtils.toaFromString(r8)     // Catch: java.lang.Throwable -> Led
+            int r7 = -r7
+            int r7 = -r7
+            r7 = r7 ^ (-1)
+            int r6 = r6 - r7
+            int r6 = r6 - r2
+            byte r6 = (byte) r6     // Catch: java.lang.Throwable -> Led
+            long r9 = android.view.ViewConfiguration.getGlobalActionKeyTimeout()     // Catch: java.lang.Throwable -> Led
+            r11 = 0
+            goto L92
+        L86:
+            int r7 = android.telephony.PhoneNumberUtils.toaFromString(r8)     // Catch: java.lang.Throwable -> Led
+            int r6 = r6 % r7
+            byte r6 = (byte) r6     // Catch: java.lang.Throwable -> Led
+            long r9 = android.view.ViewConfiguration.getGlobalActionKeyTimeout()     // Catch: java.lang.Throwable -> Led
+            r11 = 1
+        L92:
+            r7 = -1125762083(0xffffffffbce63bdd, float:-0.028104717)
+            int r13 = (r9 > r11 ? 1 : (r9 == r11 ? 0 : -1))
+            int r9 = -r13
+            r10 = r7 & r9
+            r7 = r7 ^ r9
+            r7 = r7 | r10
+            r9 = r10 ^ r7
+            r7 = r7 & r10
+            int r7 = r7 << r2
+            int r9 = r9 + r7
+            r7 = 1364036365(0x514d8b0d, float:5.5175074E10)
+            int r10 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            int r10 = r10 + 63
+            int r11 = r10 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r11
+            int r10 = r10 % r1
+            int r5 = android.text.TextUtils.indexOf(r8, r5, r0, r0)     // Catch: java.lang.Throwable -> Led
+            int r5 = -r5
+            r8 = r5 ^ r7
+            r5 = r5 & r7
+            r5 = r5 | r8
+            int r5 = r5 << r2
+            int r5 = r5 - r8
+            java.lang.String r14 = m11361c(r14, r4, r6, r9, r5)     // Catch: java.lang.Throwable -> Led
+            java.lang.String r14 = r14.intern()     // Catch: java.lang.Throwable -> Led
+            java.security.KeyFactory r14 = java.security.KeyFactory.getInstance(r14)     // Catch: java.lang.Throwable -> Led
+            int r4 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r5 = r4 & 7
+            r6 = r5 ^ (-1)
+            r4 = r4 | 7
+            r4 = r4 & r6
+            int r5 = r5 << r2
+            int r5 = -r5
+            int r5 = -r5
+            r5 = r5 ^ (-1)
+            int r4 = r4 - r5
+            int r4 = r4 - r2
+            int r5 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r5
+            int r4 = r4 % r1
+            java.security.spec.KeySpec r3 = (java.security.spec.KeySpec) r3     // Catch: java.lang.Throwable -> Led
+            java.security.PublicKey r14 = r14.generatePublic(r3)     // Catch: java.lang.Throwable -> Led
+            int r3 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r4 = r3 ^ 123(0x7b, float:1.72E-43)
+            r3 = r3 & 123(0x7b, float:1.72E-43)
+            int r3 = r3 << r2
+            int r4 = r4 + r3
+            int r3 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r3
+            int r4 = r4 % r1
+            goto Lee
+        Led:
+            r14 = 0
+        Lee:
+            int r3 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            int r3 = r3 + 19
+            int r3 = r3 - r2
+            int r3 = r3 - r0
+            int r3 = r3 - r2
+            int r0 = r3 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r0
+            int r3 = r3 % r1
+            return r14
+    }
+
+    public final java.lang.String decrypt(java.lang.String r12, java.lang.String r13) {
+            r11 = this;
+            int r0 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r1 = r0 & 112(0x70, float:1.57E-43)
+            r0 = r0 | 112(0x70, float:1.57E-43)
+            int r1 = r1 + r0
+            r0 = 0
+            int r1 = r1 - r0
+            r2 = 1
+            int r1 = r1 - r2
+            int r3 = r1 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r3
+            int r1 = r1 % 2
+            r3 = 48
+            if (r1 != 0) goto L18
+            r1 = 48
+            goto L1a
+        L18:
+            r1 = 67
+        L1a:
+            r4 = 27
+            if (r1 == r3) goto L3b
+            int r1 = android.view.KeyEvent.getModifierMetaStateMask()
+            byte r1 = (byte) r1
+            int r1 = -r1
+            r5 = r1 | (-116(0xffffffffffffff8c, float:NaN))
+            int r5 = r5 << r2
+            r1 = r1 ^ (-116(0xffffffffffffff8c, float:NaN))
+            int r5 = r5 - r1
+            short r1 = (short) r5
+            int r5 = android.graphics.Color.blue(r0)
+            int r5 = -r5
+            int r5 = -r5
+            r6 = r5 & (-101(0xffffffffffffff9b, float:NaN))
+            r5 = r5 ^ (-101(0xffffffffffffff9b, float:NaN))
+            r5 = r5 | r6
+            r5 = r5 ^ (-1)
+            int r6 = r6 - r5
+            int r6 = r6 - r2
+            goto L4a
+        L3b:
+            r1 = 11
+            int r5 = android.view.KeyEvent.getModifierMetaStateMask()
+            byte r5 = (byte) r5
+            int r1 = r1 >> r5
+            short r1 = (short) r1
+            int r5 = android.graphics.Color.blue(r0)
+            int r6 = r4 >> r5
+        L4a:
+            int r5 = android.graphics.Color.alpha(r0)
+            int r5 = -r5
+            int r5 = -r5
+            r7 = r5 & (-118(0xffffffffffffff8a, float:NaN))
+            r5 = r5 ^ (-118(0xffffffffffffff8a, float:NaN))
+            r5 = r5 | r7
+            r5 = r5 ^ (-1)
+            int r7 = r7 - r5
+            int r7 = r7 - r2
+            byte r5 = (byte) r7
+            r7 = -1125762081(0xffffffffbce63bdf, float:-0.02810472)
+            r8 = 0
+            int r8 = android.widget.ExpandableListView.getPackedPositionType(r8)
+            int r8 = -r8
+            int r8 = -r8
+            r9 = r8 & r7
+            r7 = r7 ^ r8
+            r7 = r7 | r9
+            r7 = r7 ^ (-1)
+            int r9 = r9 - r7
+            int r9 = r9 - r2
+            int r7 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            int r7 = r7 + 53
+            int r7 = r7 - r2
+            int r7 = r7 - r2
+            int r8 = r7 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r8
+            int r7 = r7 % 2
+            r7 = 1364036401(0x514d8b31, float:5.517522E10)
+            int r8 = android.view.KeyEvent.getModifierMetaStateMask()
+            byte r8 = (byte) r8
+            int r8 = -r8
+            r10 = r8 & 0
+            r8 = r8 ^ (-1)
+            r8 = r8 & (-1)
+            r8 = r8 | r10
+            int r8 = -r8
+            r10 = r8 | r7
+            int r10 = r10 << r2
+            r7 = r7 ^ r8
+            int r10 = r10 - r7
+            r7 = r10 & (-1)
+            r8 = r10 | (-1)
+            int r7 = r7 + r8
+            java.lang.String r1 = m11361c(r1, r6, r5, r9, r7)
+            java.lang.String r1 = r1.intern()
+            kotlin.jvm.internal.Intrinsics.m7114a(r12, r1)
+            int r1 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r5 = r1 ^ 39
+            r6 = r1 & 39
+            r5 = r5 | r6
+            int r5 = r5 << r2
+            r6 = r1 & (-40)
+            r1 = r1 ^ (-1)
+            r1 = r1 & 39
+            r1 = r1 | r6
+            int r5 = r5 - r1
+            int r1 = r5 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r1
+            int r5 = r5 % 2
+            java.lang.String r1 = ""
+            int r5 = android.text.TextUtils.getOffsetAfter(r1, r0)
+            int r5 = -r5
+            r6 = r5 | 82
+            int r6 = r6 << r2
+            r5 = r5 ^ 82
+            int r6 = r6 - r5
+            short r5 = (short) r6
+            int r6 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r7 = r6 & 113(0x71, float:1.58E-43)
+            r6 = r6 ^ 113(0x71, float:1.58E-43)
+            r6 = r6 | r7
+            int r6 = -r6
+            int r6 = -r6
+            r6 = r6 ^ (-1)
+            int r7 = r7 - r6
+            int r7 = r7 - r2
+            int r6 = r7 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r6
+            int r7 = r7 % 2
+            if (r7 != 0) goto Lda
+            r6 = 0
+            goto Ldb
+        Lda:
+            r6 = 1
+        Ldb:
+            if (r6 == r2) goto Lfd
+            int r3 = android.text.TextUtils.lastIndexOf(r1, r4)
+            int r3 = -r3
+            r4 = r3 ^ (-1)
+            r4 = r4 & (-102(0xffffffffffffff9a, float:NaN))
+            r6 = r3 & 101(0x65, float:1.42E-43)
+            r4 = r4 | r6
+            r3 = r3 & (-102(0xffffffffffffff9a, float:NaN))
+            int r3 = r3 << r2
+            int r3 = -r3
+            int r3 = -r3
+            r6 = r4 ^ r3
+            r3 = r3 & r4
+            int r3 = r3 << r2
+            int r6 = r6 + r3
+            r3 = 50
+            int r4 = android.view.KeyEvent.getModifierMetaStateMask()
+            byte r4 = (byte) r4
+            int r3 = r3 / r4
+        Lfb:
+            byte r3 = (byte) r3
+            goto L11b
+        Lfd:
+            int r3 = android.text.TextUtils.lastIndexOf(r1, r3)
+            int r3 = -r3
+            r4 = r3 ^ (-102(0xffffffffffffff9a, float:NaN))
+            r6 = r3 & (-102(0xffffffffffffff9a, float:NaN))
+            r4 = r4 | r6
+            int r4 = r4 << r2
+            r6 = r6 ^ (-1)
+            r3 = r3 | (-102(0xffffffffffffff9a, float:NaN))
+            r3 = r3 & r6
+            int r3 = -r3
+            r3 = r3 ^ (-1)
+            int r4 = r4 - r3
+            int r6 = r4 + (-1)
+            int r3 = android.view.KeyEvent.getModifierMetaStateMask()
+            byte r3 = (byte) r3
+            int r3 = r3 + (-62)
+            goto Lfb
+        L11b:
+            r4 = -1125762076(0xffffffffbce63be4, float:-0.02810473)
+            int r7 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r8 = r7 & 57
+            r9 = r8 ^ (-1)
+            r7 = r7 | 57
+            r7 = r7 & r9
+            int r8 = r8 << r2
+            r9 = r7 | r8
+            int r9 = r9 << r2
+            r7 = r7 ^ r8
+            int r9 = r9 - r7
+            int r7 = r9 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r7
+            int r9 = r9 % 2
+            if (r9 != 0) goto L137
+            r7 = 1
+            goto L138
+        L137:
+            r7 = 0
+        L138:
+            if (r7 == r2) goto L151
+            int r7 = android.view.View.getDefaultSize(r0, r0)
+            r8 = r4 & r7
+            r9 = r8 ^ (-1)
+            r4 = r4 | r7
+            r4 = r4 & r9
+            int r7 = r8 << 1
+            int r7 = -r7
+            int r7 = -r7
+            r7 = r7 ^ (-1)
+            int r4 = r4 - r7
+            int r4 = r4 - r2
+            int r1 = android.text.TextUtils.indexOf(r1, r1)
+            goto L15a
+        L151:
+            int r7 = android.view.View.getDefaultSize(r0, r0)
+            int r4 = r4 << r7
+            int r1 = android.text.TextUtils.indexOf(r1, r1)
+        L15a:
+            r7 = 1364036396(0x514d8b2c, float:5.51752E10)
+            int r8 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r9 = r8 ^ 117(0x75, float:1.64E-43)
+            r8 = r8 & 117(0x75, float:1.64E-43)
+            int r8 = r8 << r2
+            int r8 = -r8
+            int r8 = -r8
+            r8 = r8 ^ (-1)
+            int r9 = r9 - r8
+            int r9 = r9 - r2
+            int r8 = r9 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r8
+            int r9 = r9 % 2
+            int r1 = -r1
+            r8 = r7 ^ r1
+            r9 = r7 & r1
+            r8 = r8 | r9
+            int r8 = r8 << r2
+            r9 = r9 ^ (-1)
+            r1 = r1 | r7
+            r1 = r1 & r9
+            int r8 = r8 - r1
+            java.lang.String r1 = m11361c(r5, r6, r3, r4, r8)
+            java.lang.String r1 = r1.intern()
+            kotlin.jvm.internal.Intrinsics.m7114a(r13, r1)
+            java.security.PrivateKey r13 = privateKeyFromString(r13)
+            int r1 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r3 = r1 ^ 93
+            r1 = r1 & 93
+            int r1 = r1 << r2
+            r4 = r3 ^ r1
+            r1 = r1 & r3
+            int r1 = r1 << r2
+            int r4 = r4 + r1
+            int r1 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r1
+            int r4 = r4 % 2
+            java.lang.String r12 = r11.decrypt(r12, r13)
+            int r13 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r1 = r13 & 19
+            r3 = r1 ^ (-1)
+            r13 = r13 | 19
+            r13 = r13 & r3
+            int r1 = r1 << r2
+            int r13 = r13 + r1
+            int r1 = r13 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r1
+            int r13 = r13 % 2
+            r1 = 38
+            if (r13 == 0) goto L1b8
+            r13 = 5
+            goto L1ba
+        L1b8:
+            r13 = 38
+        L1ba:
+            if (r13 == r1) goto L1c2
+            r13 = 32
+            int r13 = r13 / r0
+            return r12
+        L1c0:
+            r12 = move-exception
+            throw r12
+        L1c2:
+            return r12
+    }
+
+    public final java.lang.String decrypt(java.lang.String r13, java.security.PrivateKey r14) {
+            r12 = this;
+            int r0 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r1 = r0 & 25
+            r0 = r0 ^ 25
+            r0 = r0 | r1
+            int r0 = -r0
+            int r0 = -r0
+            r2 = r1 & r0
+            r0 = r0 | r1
+            int r2 = r2 + r0
+            int r0 = r2 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r0
+            r0 = 2
+            int r2 = r2 % r0
+            r1 = 1
+            if (r2 != 0) goto L18
+            r2 = 1
+            goto L1a
+        L18:
+            r2 = 18
+        L1a:
+            r3 = 0
+            if (r2 == r1) goto L34
+            long r5 = android.os.SystemClock.elapsedRealtimeNanos()
+            int r2 = (r5 > r3 ? 1 : (r5 == r3 ? 0 : -1))
+            int r2 = -r2
+            r3 = r2 & (-114(0xffffffffffffff8e, float:NaN))
+            r2 = r2 ^ (-114(0xffffffffffffff8e, float:NaN))
+            r2 = r2 | r3
+            int r2 = -r2
+            int r2 = -r2
+            r2 = r2 ^ (-1)
+            int r3 = r3 - r2
+            int r3 = r3 - r1
+            short r2 = (short) r3
+            r3 = -100
+            goto L40
+        L34:
+            r2 = 94
+            long r5 = android.os.SystemClock.elapsedRealtimeNanos()
+            int r7 = (r5 > r3 ? 1 : (r5 == r3 ? 0 : -1))
+            int r2 = r2 / r7
+            short r2 = (short) r2
+            r3 = 99
+        L40:
+            float r4 = android.media.AudioTrack.getMaxVolume()
+            r5 = 0
+            int r4 = (r4 > r5 ? 1 : (r4 == r5 ? 0 : -1))
+            int r4 = -r4
+            r5 = r4 ^ (-1)
+            r5 = r5 & r3
+            r6 = r3 ^ (-1)
+            r6 = r6 & r4
+            r5 = r5 | r6
+            r3 = r3 & r4
+            int r3 = r3 << r1
+            r3 = r3 ^ (-1)
+            int r5 = r5 - r3
+            int r5 = r5 - r1
+            int r3 = android.view.ViewConfiguration.getWindowTouchSlop()
+            int r3 = r3 >> 8
+            int r3 = -r3
+            r4 = r3 ^ (-1)
+            r4 = r4 & (-118(0xffffffffffffff8a, float:NaN))
+            r6 = r3 & 117(0x75, float:1.64E-43)
+            r4 = r4 | r6
+            r3 = r3 & (-118(0xffffffffffffff8a, float:NaN))
+            int r3 = r3 << r1
+            r6 = r4 | r3
+            int r6 = r6 << r1
+            r3 = r3 ^ r4
+            int r6 = r6 - r3
+            byte r3 = (byte) r6
+            r4 = -1125762081(0xffffffffbce63bdf, float:-0.02810472)
+            int r6 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            int r6 = r6 + 38
+            int r6 = r6 - r1
+            int r7 = r6 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r7
+            int r6 = r6 % r0
+            java.lang.String r6 = ""
+            r7 = 0
+            int r8 = android.text.TextUtils.getOffsetAfter(r6, r7)
+            int r8 = -r8
+            r9 = r8 & 0
+            r8 = r8 ^ (-1)
+            r8 = r8 & (-1)
+            r8 = r8 | r9
+            int r8 = -r8
+            r8 = r8 ^ (-1)
+            int r4 = r4 - r8
+            int r4 = r4 - r1
+            int r4 = r4 - r1
+            r8 = 1364036402(0x514d8b32, float:5.5175225E10)
+            int r9 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r10 = r9 ^ 81
+            r9 = r9 & 81
+            int r9 = r9 << r1
+            int r9 = -r9
+            int r9 = -r9
+            r9 = r9 ^ (-1)
+            int r10 = r10 - r9
+            int r10 = r10 - r1
+            int r9 = r10 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r9
+            int r10 = r10 % r0
+            r9 = 47
+            if (r10 == 0) goto Laa
+            r10 = 47
+            goto Lac
+        Laa:
+            r10 = 50
+        Lac:
+            r11 = 0
+            if (r10 == r9) goto Lcb
+            int r6 = android.text.TextUtils.getOffsetBefore(r6, r7)
+            int r6 = -r6
+            r6 = r6 ^ (-1)
+            int r8 = r8 - r6
+            int r8 = r8 - r1
+            java.lang.String r2 = m11361c(r2, r5, r3, r4, r8)
+            java.lang.String r2 = r2.intern()
+            kotlin.jvm.internal.Intrinsics.m7114a(r13, r2)
+            if (r14 != 0) goto Lc7
+            r2 = 1
+            goto Lc8
+        Lc7:
+            r2 = 0
+        Lc8:
+            if (r2 == 0) goto L110
+            goto Lef
+        Lcb:
+            int r6 = android.text.TextUtils.getOffsetBefore(r6, r7)
+            int r6 = -r6
+            r9 = r6 & r8
+            r6 = r6 ^ r8
+            r6 = r6 | r9
+            r8 = r9 | r6
+            int r8 = r8 << r1
+            r6 = r6 ^ r9
+            int r8 = r8 - r6
+            java.lang.String r2 = m11361c(r2, r5, r3, r4, r8)
+            java.lang.String r2 = r2.intern()
+            kotlin.jvm.internal.Intrinsics.m7114a(r13, r2)
+            r2 = 67
+            if (r14 != 0) goto Leb
+            r3 = 92
+            goto Led
+        Leb:
+            r3 = 67
+        Led:
+            if (r3 == r2) goto L110
+        Lef:
+            int r13 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r14 = r13 & 77
+            r13 = r13 ^ 77
+            r13 = r13 | r14
+            r2 = r14 ^ r13
+            r13 = r13 & r14
+            int r13 = r13 << r1
+            int r2 = r2 + r13
+            int r13 = r2 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r13
+            int r2 = r2 % r0
+            r13 = 87
+            if (r2 == 0) goto L107
+            r14 = 87
+            goto L109
+        L107:
+            r14 = 57
+        L109:
+            if (r14 == r13) goto L10c
+            goto L10d
+        L10c:
+            int r13 = r11.length     // Catch: java.lang.Throwable -> L10e
+        L10d:
+            return r11
+        L10e:
+            r13 = move-exception
+            throw r13
+        L110:
+            r2 = 34
+            byte[] r2 = new byte[r2]
+            r2 = {x01b6: FILL_ARRAY_DATA  , data: [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1} // fill-array
+            r3 = 4
+            int[] r4 = new int[r3]
+            r4 = {x01cc: FILL_ARRAY_DATA  , data: [0, 34, 0, 0} // fill-array
+            boolean r5 = android.view.Gravity.isHorizontal(r7)
+            r5 = r5 ^ r1
+            java.lang.String r2 = m11359d(r2, r4, r5)
+            int r4 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            int r4 = r4 + 77
+            int r5 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r5
+            int r4 = r4 % r0
+            if (r4 == 0) goto L133
+            r4 = 0
+            goto L134
+        L133:
+            r4 = 1
+        L134:
+            if (r4 == 0) goto L142
+            java.lang.String r2 = r2.intern()
+            javax.crypto.Cipher r2 = javax.crypto.Cipher.getInstance(r2)
+            java.security.Key r14 = (java.security.Key) r14
+            r4 = 2
+            goto L14d
+        L142:
+            java.lang.String r2 = r2.intern()
+            javax.crypto.Cipher r2 = javax.crypto.Cipher.getInstance(r2)
+            java.security.Key r14 = (java.security.Key) r14
+            r4 = 4
+        L14d:
+            r2.init(r4, r14)
+            byte[] r13 = android.util.Base64.decode(r13, r0)
+            byte[] r13 = r2.doFinal(r13)
+            int r14 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r2 = r14 & 95
+            r14 = r14 ^ 95
+            r14 = r14 | r2
+            r4 = r2 ^ r14
+            r14 = r14 & r2
+            int r14 = r14 << r1
+            int r4 = r4 + r14
+            int r14 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r14
+            int r4 = r4 % r0
+            if (r4 == 0) goto L16c
+            goto L16d
+        L16c:
+            r7 = 1
+        L16d:
+            java.lang.String r14 = "https://"
+            r2 = 48
+            if (r7 == 0) goto L182
+            byte[] r2 = new byte[r2]
+            r2 = {x01d8: FILL_ARRAY_DATA  , data: [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0} // fill-array
+            int[] r3 = new int[r3]
+            r3 = {x01f4: FILL_ARRAY_DATA  , data: [34, 48, 102, 0} // fill-array
+            boolean r14 = android.webkit.URLUtil.isHttpsUrl(r14)
+            goto L193
+        L182:
+            byte[] r2 = new byte[r2]
+            r2 = {x0200: FILL_ARRAY_DATA  , data: [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0} // fill-array
+            int[] r3 = new int[r3]
+            r3 = {x021c: FILL_ARRAY_DATA  , data: [34, 48, 102, 0} // fill-array
+            boolean r14 = android.webkit.URLUtil.isHttpsUrl(r14)
+            super.hashCode()     // Catch: java.lang.Throwable -> L1b3
+        L193:
+            java.lang.String r14 = m11359d(r2, r3, r14)
+            java.lang.String r14 = r14.intern()
+            kotlin.jvm.internal.Intrinsics.$r8$backportedMethods$utility$Double$1$hashCode(r13, r14)
+            java.lang.String r14 = new java.lang.String
+            java.nio.charset.Charset r2 = kotlin.text.Charsets.extraCallback
+            r14.<init>(r13, r2)
+            int r13 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r2 = r13 ^ 7
+            r13 = r13 & 7
+            int r13 = r13 << r1
+            int r2 = r2 + r13
+            int r13 = r2 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r13
+            int r2 = r2 % r0
+            return r14
+        L1b3:
+            r13 = move-exception
+            throw r13
+    }
+
+    public final java.lang.String encrypt(java.lang.String r12, java.lang.String r13) {
+            r11 = this;
+            int r0 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r1 = r0 & 19
+            r0 = r0 | 19
+            int r1 = r1 + r0
+            int r0 = r1 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r0
+            int r1 = r1 % 2
+            r0 = 0
+            r2 = 1
+            if (r1 != 0) goto L13
+            r1 = 0
+            goto L14
+        L13:
+            r1 = 1
+        L14:
+            r3 = 16
+            if (r1 == 0) goto L36
+            int r1 = android.view.ViewConfiguration.getKeyRepeatDelay()
+            int r1 = r1 >> r3
+            int r1 = -r1
+            r4 = r1 & (-1)
+            r4 = r4 ^ (-1)
+            r1 = r1 | (-1)
+            r1 = r1 & r4
+            int r1 = -r1
+            r4 = r1 | (-115(0xffffffffffffff8d, float:NaN))
+            int r4 = r4 << r2
+            r1 = r1 ^ (-115(0xffffffffffffff8d, float:NaN))
+            int r4 = r4 - r1
+            r1 = r4 ^ (-1)
+            r4 = r4 & (-1)
+            int r4 = r4 << r2
+            int r1 = r1 + r4
+            short r1 = (short) r1
+            r4 = -101(0xffffffffffffff9b, float:NaN)
+            goto L52
+        L36:
+            int r1 = android.view.ViewConfiguration.getKeyRepeatDelay()
+            r4 = 115(0x73, float:1.61E-43)
+            r5 = r1 ^ 115(0x73, float:1.61E-43)
+            r6 = r1 & 115(0x73, float:1.61E-43)
+            r5 = r5 | r6
+            int r5 = r5 << r2
+            r6 = r1 & (-116(0xffffffffffffff8c, float:NaN))
+            r1 = r1 ^ (-1)
+            r1 = r1 & r4
+            r1 = r1 | r6
+            int r1 = -r1
+            r4 = r5 & r1
+            r1 = r1 | r5
+            int r4 = r4 + r1
+            int r4 = r4 * 67
+            short r1 = (short) r4
+            r4 = 108(0x6c, float:1.51E-43)
+        L52:
+            int r5 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            int r5 = r5 + 92
+            int r5 = r5 - r2
+            int r6 = r5 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r6
+            int r5 = r5 % 2
+            int r5 = android.view.KeyEvent.getDeadChar(r0, r0)
+            int r5 = -r5
+            int r5 = -r5
+            r6 = r4 & r5
+            r4 = r4 ^ r5
+            r4 = r4 | r6
+            int r4 = -r4
+            int r4 = -r4
+            r5 = r6 & r4
+            r4 = r4 | r6
+            int r5 = r5 + r4
+            r4 = -118(0xffffffffffffff8a, float:NaN)
+            int r6 = android.os.Process.getThreadPriority(r0)
+            int r7 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            int r7 = r7 + 97
+            int r7 = r7 - r2
+            r8 = r7 ^ (-1)
+            r7 = r7 & (-1)
+            int r7 = r7 << r2
+            int r8 = r8 + r7
+            int r7 = r8 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r7
+            int r8 = r8 % 2
+            int r6 = r6 + 21
+            int r6 = r6 - r2
+            int r6 = r6 >> 6
+            r7 = r4 & r6
+            r4 = r4 ^ r6
+            r4 = r4 | r7
+            int r4 = -r4
+            int r4 = -r4
+            r6 = r7 | r4
+            int r6 = r6 << r2
+            r4 = r4 ^ r7
+            int r6 = r6 - r4
+            byte r4 = (byte) r6
+            r6 = -1125762081(0xffffffffbce63bdf, float:-0.02810472)
+            java.lang.String r7 = ""
+            int r8 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r9 = r8 ^ 107(0x6b, float:1.5E-43)
+            r8 = r8 & 107(0x6b, float:1.5E-43)
+            int r8 = r8 << r2
+            r10 = r9 ^ r8
+            r8 = r8 & r9
+            int r8 = r8 << r2
+            int r10 = r10 + r8
+            int r8 = r10 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r8
+            int r10 = r10 % 2
+            if (r10 != 0) goto Lb0
+            r8 = 0
+            goto Lb1
+        Lb0:
+            r8 = 1
+        Lb1:
+            if (r8 == 0) goto Lc1
+            int r7 = android.text.TextUtils.getTrimmedLength(r7)
+            int r7 = -r7
+            r7 = r7 ^ (-1)
+            int r6 = r6 - r7
+            int r6 = r6 - r2
+            int r7 = android.view.ViewConfiguration.getTapTimeout()
+            goto Lcc
+        Lc1:
+            int r3 = android.text.TextUtils.getTrimmedLength(r7)
+            int r6 = r6 << r3
+            int r7 = android.view.ViewConfiguration.getTapTimeout()
+            r3 = 13
+        Lcc:
+            r8 = 1364036402(0x514d8b32, float:5.5175225E10)
+            int r3 = r7 >> r3
+            int r8 = r8 - r3
+            java.lang.String r1 = m11361c(r1, r5, r4, r6, r8)
+            java.lang.String r1 = r1.intern()
+            kotlin.jvm.internal.Intrinsics.m7114a(r12, r1)
+            int r1 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r3 = r1 | 89
+            int r3 = r3 << r2
+            r1 = r1 ^ 89
+            int r3 = r3 - r1
+            int r1 = r3 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r1
+            int r3 = r3 % 2
+            if (r3 == 0) goto Lee
+            r0 = 1
+        Lee:
+            r1 = 0
+            java.lang.String r3 = "data:"
+            r4 = 4
+            r5 = 9
+            if (r0 == 0) goto L10a
+            byte[] r0 = new byte[r5]
+            r0 = {x015c: FILL_ARRAY_DATA  , data: [1, 0, 0, 1, 0, 1, 1, 1, 0} // fill-array
+            int[] r4 = new int[r4]
+            r4 = {x0166: FILL_ARRAY_DATA  , data: [82, 9, 0, 7} // fill-array
+            boolean r3 = android.webkit.URLUtil.isDataUrl(r3)
+            super.hashCode()     // Catch: java.lang.Throwable -> L108
+            goto L118
+        L108:
+            r12 = move-exception
+            throw r12
+        L10a:
+            byte[] r0 = new byte[r5]
+            r0 = {x0172: FILL_ARRAY_DATA  , data: [1, 0, 0, 1, 0, 1, 1, 1, 0} // fill-array
+            int[] r4 = new int[r4]
+            r4 = {x017c: FILL_ARRAY_DATA  , data: [82, 9, 0, 7} // fill-array
+            boolean r3 = android.webkit.URLUtil.isDataUrl(r3)
+        L118:
+            int r5 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            int r5 = r5 + 81
+            int r6 = r5 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r6
+            int r5 = r5 % 2
+            r6 = 87
+            if (r5 == 0) goto L129
+            r5 = 87
+            goto L12b
+        L129:
+            r5 = 75
+        L12b:
+            if (r5 == r6) goto L139
+            java.lang.String r0 = m11359d(r0, r4, r3)
+            java.lang.String r0 = r0.intern()
+            kotlin.jvm.internal.Intrinsics.m7114a(r13, r0)
+            goto L145
+        L139:
+            java.lang.String r0 = m11359d(r0, r4, r3)
+            java.lang.String r0 = r0.intern()
+            kotlin.jvm.internal.Intrinsics.m7114a(r13, r0)
+            int r0 = r1.length     // Catch: java.lang.Throwable -> L15a
+        L145:
+            java.security.PublicKey r13 = publicKeyFromString(r13)
+            java.lang.String r12 = r11.encrypt(r12, r13)
+            int r13 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r0 = r13 & 1
+            r13 = r13 | r2
+            int r0 = r0 + r13
+            int r13 = r0 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r13
+            int r0 = r0 % 2
+            return r12
+        L15a:
+            r12 = move-exception
+            throw r12
+    }
+
+    public final java.lang.String encrypt(java.lang.String r16, java.security.PublicKey r17) {
+            r15 = this;
+            r0 = r16
+            int r1 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r2 = r1 & (-46)
+            r3 = r1 ^ (-1)
+            r3 = r3 & 45
+            r2 = r2 | r3
+            r1 = r1 & 45
+            r3 = 1
+            int r1 = r1 << r3
+            r1 = r1 ^ (-1)
+            int r2 = r2 - r1
+            int r2 = r2 - r3
+            int r1 = r2 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r1
+            r1 = 2
+            int r2 = r2 % r1
+            long r4 = android.os.SystemClock.uptimeMillis()
+            r6 = 0
+            int r2 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1))
+            int r2 = -r2
+            r4 = r2 & (-114(0xffffffffffffff8e, float:NaN))
+            r2 = r2 ^ (-114(0xffffffffffffff8e, float:NaN))
+            r2 = r2 | r4
+            int r2 = -r2
+            int r2 = -r2
+            r5 = r4 & r2
+            r2 = r2 | r4
+            int r5 = r5 + r2
+            short r2 = (short) r5
+            r4 = -101(0xffffffffffffff9b, float:NaN)
+            int r5 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r6 = r5 & 95
+            r5 = r5 | 95
+            r7 = r6 ^ r5
+            r5 = r5 & r6
+            int r5 = r5 << r3
+            int r7 = r7 + r5
+            int r5 = r7 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r5
+            int r7 = r7 % r1
+            r5 = 48
+            if (r7 == 0) goto L47
+            r6 = 66
+            goto L49
+        L47:
+            r6 = 48
+        L49:
+            r7 = 53
+            java.lang.String r8 = ""
+            r9 = 0
+            if (r6 == r5) goto L58
+            int r6 = android.text.TextUtils.getCapsMode(r8, r3, r3)
+            int r4 = r4 % r6
+            r6 = 53
+            goto L6b
+        L58:
+            int r6 = android.text.TextUtils.getCapsMode(r8, r9, r9)
+            int r6 = -r6
+            r10 = r6 & (-101(0xffffffffffffff9b, float:NaN))
+            r11 = r10 ^ (-1)
+            r4 = r4 | r6
+            r4 = r4 & r11
+            int r6 = r10 << 1
+            r10 = r4 & r6
+            r4 = r4 | r6
+            int r4 = r4 + r10
+            r6 = -117(0xffffffffffffff8b, float:NaN)
+        L6b:
+            int r10 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r11 = r10 | 40
+            int r11 = r11 << r3
+            r10 = r10 ^ 40
+            int r11 = r11 - r10
+            int r11 = r11 - r3
+            int r10 = r11 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r10
+            int r11 = r11 % r1
+            int r5 = android.text.TextUtils.indexOf(r8, r5, r9)
+            r10 = r5 & (-1)
+            r10 = r10 ^ (-1)
+            r5 = r5 | (-1)
+            r5 = r5 & r10
+            int r5 = -r5
+            r10 = r6 | r5
+            int r10 = r10 << r3
+            r5 = r5 ^ r6
+            int r10 = r10 - r5
+            int r10 = r10 - r9
+            int r10 = r10 - r3
+            byte r5 = (byte) r10
+            r6 = -1125762081(0xffffffffbce63bdf, float:-0.02810472)
+            int r10 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            int r10 = r10 + 103
+            int r10 = r10 - r3
+            int r10 = r10 - r3
+            int r11 = r10 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r11
+            int r10 = r10 % r1
+            r11 = 12
+            r12 = 97
+            if (r10 == 0) goto La4
+            r10 = 12
+            goto La6
+        La4:
+            r10 = 97
+        La6:
+            if (r10 == r11) goto Lb3
+            int r10 = android.text.TextUtils.indexOf(r8, r8)
+            int r10 = -r10
+            r11 = r10 ^ r6
+            r6 = r6 & r10
+            int r6 = r6 << r3
+            int r11 = r11 + r6
+            goto Lb9
+        Lb3:
+            int r10 = android.text.TextUtils.indexOf(r8, r8)
+            int r11 = r6 % r10
+        Lb9:
+            int r6 = android.graphics.Color.blue(r9)
+            r10 = 1364036402(0x514d8b32, float:5.5175225E10)
+            int r6 = -r6
+            r13 = r10 ^ r6
+            r14 = r10 & r6
+            r13 = r13 | r14
+            int r13 = r13 << r3
+            r14 = r14 ^ (-1)
+            r6 = r6 | r10
+            r6 = r6 & r14
+            int r6 = -r6
+            r6 = r6 ^ (-1)
+            int r13 = r13 - r6
+            int r13 = r13 - r3
+            java.lang.String r2 = m11361c(r2, r4, r5, r11, r13)
+            java.lang.String r2 = r2.intern()
+            kotlin.jvm.internal.Intrinsics.m7114a(r0, r2)
+            if (r17 != 0) goto Ldf
+            r2 = 1
+            goto Le0
+        Ldf:
+            r2 = 0
+        Le0:
+            r4 = 0
+            if (r2 == 0) goto L11d
+            int r0 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r2 = r0 ^ 59
+            r5 = r0 & 59
+            r2 = r2 | r5
+            int r2 = r2 << r3
+            r5 = r0 & (-60)
+            r0 = r0 ^ (-1)
+            r0 = r0 & 59
+            r0 = r0 | r5
+            int r2 = r2 - r0
+            int r0 = r2 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r0
+            int r2 = r2 % r1
+            int r0 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r2 = 21
+            r5 = r0 ^ 21
+            r6 = r0 & 21
+            r5 = r5 | r6
+            int r5 = r5 << r3
+            r6 = r0 & (-22)
+            r0 = r0 ^ (-1)
+            r0 = r0 & r2
+            r0 = r0 | r6
+            int r0 = -r0
+            r0 = r0 ^ (-1)
+            int r5 = r5 - r0
+            int r5 = r5 - r3
+            int r0 = r5 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r0
+            int r5 = r5 % r1
+            if (r5 == 0) goto L115
+            r9 = 1
+        L115:
+            if (r9 == r3) goto L118
+            return r4
+        L118:
+            int r0 = r4.length     // Catch: java.lang.Throwable -> L11a
+            return r4
+        L11a:
+            r0 = move-exception
+            r1 = r0
+            throw r1
+        L11d:
+            r2 = 34
+            byte[] r2 = new byte[r2]
+            r2 = {x025e: FILL_ARRAY_DATA  , data: [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1} // fill-array
+            r5 = 4
+            int[] r6 = new int[r5]
+            r6 = {x0274: FILL_ARRAY_DATA  , data: [0, 34, 0, 0} // fill-array
+            boolean r10 = android.view.Gravity.isHorizontal(r9)
+            r11 = r10 & 1
+            r13 = r11 & (-1)
+            r13 = r13 ^ (-1)
+            r11 = r11 | (-1)
+            r11 = r11 & r13
+            r10 = r10 | r3
+            r10 = r10 & r11
+            java.lang.String r2 = m11359d(r2, r6, r10)
+            java.lang.String r2 = r2.intern()
+            int r6 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r10 = r6 & 15
+            r6 = r6 | 15
+            int r10 = r10 + r6
+            int r6 = r10 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r6
+            int r10 = r10 % r1
+            r6 = 78
+            if (r10 == 0) goto L154
+            r10 = 78
+            goto L156
+        L154:
+            r10 = 75
+        L156:
+            if (r10 == r6) goto L166
+            javax.crypto.Cipher r2 = javax.crypto.Cipher.getInstance(r2)
+            r6 = r17
+            java.security.Key r6 = (java.security.Key) r6
+            r2.init(r3, r6)
+        L163:
+            java.nio.charset.Charset r6 = java.nio.charset.StandardCharsets.UTF_8
+            goto L172
+        L166:
+            javax.crypto.Cipher r2 = javax.crypto.Cipher.getInstance(r2)
+            r6 = r17
+            java.security.Key r6 = (java.security.Key) r6
+            r2.init(r9, r6)
+            goto L163
+        L172:
+            int[] r10 = new int[r5]
+            r10 = {x0280: FILL_ARRAY_DATA  , data: [91, 22, 19, 20} // fill-array
+            boolean r8 = android.telephony.PhoneNumberUtils.isGlobalPhoneNumber(r8)
+            r8 = r8 ^ r3
+            java.lang.String r8 = m11359d(r4, r10, r8)
+            int r10 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r11 = r10 & 93
+            r10 = r10 ^ 93
+            r10 = r10 | r11
+            int r11 = r11 + r10
+            int r10 = r11 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r10
+            int r11 = r11 % r1
+            if (r11 != 0) goto L192
+            r10 = 97
+            goto L194
+        L192:
+            r10 = 91
+        L194:
+            r11 = 44
+            if (r10 == r12) goto L1a9
+            java.lang.String r8 = r8.intern()
+            kotlin.jvm.internal.Intrinsics.$r8$backportedMethods$utility$Double$1$hashCode(r6, r8)
+            byte[] r0 = r0.getBytes(r6)
+            byte[] r6 = new byte[r11]
+            r6 = {x028c: FILL_ARRAY_DATA  , data: [0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1} // fill-array
+            goto L1bc
+        L1a9:
+            java.lang.String r8 = r8.intern()
+            kotlin.jvm.internal.Intrinsics.$r8$backportedMethods$utility$Double$1$hashCode(r6, r8)
+            byte[] r0 = r0.getBytes(r6)
+            byte[] r6 = new byte[r11]
+            r6 = {x02a6: FILL_ARRAY_DATA  , data: [0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1} // fill-array
+            r8 = 67
+            int r8 = r8 / r9
+        L1bc:
+            int[] r8 = new int[r5]
+            r8 = {x02c0: FILL_ARRAY_DATA  , data: [113, 44, 0, 0} // fill-array
+            java.lang.String r10 = "data:"
+            boolean r10 = android.webkit.URLUtil.isDataUrl(r10)
+            r11 = r10 & 1
+            r12 = r11 & 0
+            r13 = r11 ^ (-1)
+            r13 = r13 & (-1)
+            r12 = r12 | r13
+            r10 = r10 ^ r3
+            r10 = r10 | r11
+            r10 = r10 & r12
+            java.lang.String r6 = m11359d(r6, r8, r10)
+            java.lang.String r6 = r6.intern()
+            int r8 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r10 = 5
+            r11 = r8 & (-6)
+            r12 = r8 ^ (-1)
+            r12 = r12 & r10
+            r11 = r11 | r12
+            r8 = r8 & r10
+            int r8 = r8 << r3
+            r10 = r11 & r8
+            r8 = r8 | r11
+            int r10 = r10 + r8
+            int r8 = r10 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r8
+            int r10 = r10 % r1
+            if (r10 != 0) goto L1f3
+            r8 = 0
+            goto L1f4
+        L1f3:
+            r8 = 1
+        L1f4:
+            r10 = 50
+            if (r8 == 0) goto L20a
+            kotlin.jvm.internal.Intrinsics.$r8$backportedMethods$utility$Double$1$hashCode(r0, r6)
+            byte[] r0 = r2.doFinal(r0)
+            byte[] r2 = new byte[r10]
+            r2 = {x02cc: FILL_ARRAY_DATA  , data: [0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0} // fill-array
+            int[] r5 = new int[r5]
+            r5 = {x02ea: FILL_ARRAY_DATA  , data: [157, 50, 181, 0} // fill-array
+            goto L21c
+        L20a:
+            kotlin.jvm.internal.Intrinsics.$r8$backportedMethods$utility$Double$1$hashCode(r0, r6)
+            byte[] r0 = r2.doFinal(r0)
+            byte[] r2 = new byte[r10]
+            r2 = {x02f6: FILL_ARRAY_DATA  , data: [0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0} // fill-array
+            int[] r5 = new int[r5]
+            r5 = {x0314: FILL_ARRAY_DATA  , data: [157, 50, 181, 0} // fill-array
+            int r6 = r4.length     // Catch: java.lang.Throwable -> L256
+        L21c:
+            java.lang.String r6 = "file:///android_asset/"
+            boolean r6 = android.webkit.URLUtil.isAssetUrl(r6)
+            java.lang.String r2 = m11359d(r2, r5, r6)
+            java.lang.String r2 = r2.intern()
+            kotlin.jvm.internal.Intrinsics.$r8$backportedMethods$utility$Double$1$hashCode(r0, r2)
+            int r2 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r5 = r2 & 53
+            r2 = r2 | r7
+            int r5 = r5 + r2
+            int r2 = r5 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r2
+            int r5 = r5 % r1
+            java.lang.String r0 = android.util.Base64.encodeToString(r0, r1)
+            int r2 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r5 = r2 & 85
+            r2 = r2 | 85
+            int r5 = r5 + r2
+            int r2 = r5 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r2
+            int r5 = r5 % r1
+            if (r5 != 0) goto L24b
+            goto L24c
+        L24b:
+            r9 = 1
+        L24c:
+            if (r9 == r3) goto L255
+            super.hashCode()     // Catch: java.lang.Throwable -> L252
+            return r0
+        L252:
+            r0 = move-exception
+            r1 = r0
+            throw r1
+        L255:
+            return r0
+        L256:
+            r0 = move-exception
+            r1 = r0
+            throw r1
+        L259:
+            r0 = move-exception
+            r1 = r0
+            goto L25d
+        L25c:
+            throw r1
+        L25d:
+            goto L25c
+    }
+
+    public final java.lang.String encrypt(java.lang.String r11, byte[] r12) {
+            r10 = this;
+            int r0 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r1 = r0 ^ 121(0x79, float:1.7E-43)
+            r0 = r0 & 121(0x79, float:1.7E-43)
+            r2 = 1
+            int r0 = r0 << r2
+            r3 = r1 ^ r0
+            r0 = r0 & r1
+            int r0 = r0 << r2
+            int r3 = r3 + r0
+            int r0 = r3 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r0
+            int r3 = r3 % 2
+            r0 = 0
+            if (r3 == 0) goto L18
+            r1 = 0
+            goto L19
+        L18:
+            r1 = 1
+        L19:
+            java.lang.String r3 = ""
+            if (r1 == 0) goto L39
+            r4 = 0
+            int r1 = android.widget.ExpandableListView.getPackedPositionGroup(r4)
+            int r1 = -r1
+            int r1 = -r1
+            r4 = r1 & (-115(0xffffffffffffff8d, float:NaN))
+            r5 = r4 ^ (-1)
+            r1 = r1 | (-115(0xffffffffffffff8d, float:NaN))
+            r1 = r1 & r5
+            int r4 = r4 << r2
+            r4 = r4 ^ (-1)
+            int r1 = r1 - r4
+            int r1 = r1 - r2
+            short r1 = (short) r1
+            r4 = -101(0xffffffffffffff9b, float:NaN)
+            int r3 = android.text.TextUtils.getOffsetAfter(r3, r0)
+            goto L49
+        L39:
+            r1 = 49
+            r4 = 1
+            int r4 = android.widget.ExpandableListView.getPackedPositionGroup(r4)
+            int r1 = r1 % r4
+            short r1 = (short) r1
+            r4 = 68
+            int r3 = android.text.TextUtils.getOffsetAfter(r3, r2)
+        L49:
+            int r5 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r6 = r5 ^ 48
+            r7 = 48
+            r5 = r5 & r7
+            int r5 = r5 << r2
+            int r6 = r6 + r5
+            int r6 = r6 - r2
+            int r5 = r6 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r5
+            int r6 = r6 % 2
+            int r3 = -r3
+            r5 = r4 & r3
+            r6 = r5 ^ (-1)
+            r3 = r3 | r4
+            r3 = r3 & r6
+            int r4 = r5 << 1
+            int r4 = -r4
+            int r4 = -r4
+            r5 = r3 & r4
+            r3 = r3 | r4
+            int r5 = r5 + r3
+            r3 = 16777098(0xffff8a, float:2.3509722E-38)
+            int r4 = android.graphics.Color.rgb(r0, r0, r0)
+            r6 = r4 & r3
+            r3 = r3 | r4
+            int r3 = -r3
+            int r3 = -r3
+            r3 = r3 ^ (-1)
+            int r6 = r6 - r3
+            int r6 = r6 - r2
+            byte r3 = (byte) r6
+            r4 = -1125762081(0xffffffffbce63bdf, float:-0.02810472)
+            int r6 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r8 = r6 & 3
+            r6 = r6 ^ 3
+            r6 = r6 | r8
+            int r6 = -r6
+            int r6 = -r6
+            r9 = r8 ^ r6
+            r6 = r6 & r8
+            int r6 = r6 << r2
+            int r9 = r9 + r6
+            int r6 = r9 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r6
+            int r9 = r9 % 2
+            int r6 = android.graphics.Color.green(r0)
+            int r6 = -r6
+            r8 = r4 & r6
+            r4 = r4 | r6
+            r6 = r8 | r4
+            int r6 = r6 << r2
+            r4 = r4 ^ r8
+            int r6 = r6 - r4
+            r4 = 1364036406(0x514d8b36, float:5.517524E10)
+            int r7 = android.text.AndroidCharacter.getEastAsianWidth(r7)
+            int r7 = -r7
+            r8 = r7 & r4
+            r4 = r4 ^ r7
+            r4 = r4 | r8
+            int r4 = -r4
+            int r4 = -r4
+            r7 = r8 ^ r4
+            r4 = r4 & r8
+            int r4 = r4 << r2
+            int r7 = r7 + r4
+            java.lang.String r1 = m11361c(r1, r5, r3, r6, r7)
+            int r3 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r4 = r3 & 7
+            r3 = r3 ^ 7
+            r3 = r3 | r4
+            int r4 = r4 + r3
+            int r3 = r4 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r3
+            int r4 = r4 % 2
+            java.lang.String r1 = r1.intern()
+            kotlin.jvm.internal.Intrinsics.m7114a(r11, r1)
+            r1 = 9
+            byte[] r1 = new byte[r1]
+            r1 = {x0122: FILL_ARRAY_DATA  , data: [1, 0, 0, 1, 0, 1, 1, 1, 0} // fill-array
+            r3 = 4
+            int[] r3 = new int[r3]
+            r3 = {x012c: FILL_ARRAY_DATA  , data: [82, 9, 0, 7} // fill-array
+            boolean r4 = android.os.Process.supportsProcesses()
+            int r5 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r6 = r5 ^ 29
+            r5 = r5 & 29
+            r5 = r5 | r6
+            int r5 = r5 << r2
+            int r6 = -r6
+            r7 = r5 ^ r6
+            r5 = r5 & r6
+            int r5 = r5 << r2
+            int r7 = r7 + r5
+            int r5 = r7 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r5
+            int r7 = r7 % 2
+            if (r7 == 0) goto Lf1
+            goto Lf2
+        Lf1:
+            r2 = 0
+        Lf2:
+            if (r2 == 0) goto L10e
+            java.lang.String r0 = m11359d(r1, r3, r4)
+            java.lang.String r0 = r0.intern()
+            kotlin.jvm.internal.Intrinsics.m7114a(r12, r0)
+            java.security.PublicKey r12 = publicKeyFromByteArray(r12)
+            java.lang.String r11 = r10.encrypt(r11, r12)
+            r12 = 0
+            super.hashCode()     // Catch: java.lang.Throwable -> L10c
+            goto L121
+        L10c:
+            r11 = move-exception
+            throw r11
+        L10e:
+            java.lang.String r0 = m11359d(r1, r3, r4)
+            java.lang.String r0 = r0.intern()
+            kotlin.jvm.internal.Intrinsics.m7114a(r12, r0)
+            java.security.PublicKey r12 = publicKeyFromByteArray(r12)
+            java.lang.String r11 = r10.encrypt(r11, r12)
+        L121:
+            return r11
+    }
+
+    public final java.security.KeyPair generateKeyPair() {
+            r11 = this;
+            int r0 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            r1 = r0 & 41
+            r0 = r0 ^ 41
+            r0 = r0 | r1
+            r2 = r1 ^ r0
+            r0 = r0 & r1
+            r1 = 1
+            int r0 = r0 << r1
+            int r2 = r2 + r0
+            int r0 = r2 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r0
+            int r2 = r2 % 2
+            r0 = 0
+            if (r2 != 0) goto L18
+            r2 = 0
+            goto L19
+        L18:
+            r2 = 1
+        L19:
+            java.lang.String r3 = ""
+            if (r2 == r1) goto L2f
+            int r2 = android.text.TextUtils.getCapsMode(r3, r0, r1)
+            r4 = r2 & 32
+            r2 = r2 ^ 32
+            r2 = r2 | r4
+            int r4 = r4 + r2
+            short r2 = (short) r4
+            r4 = 62
+        L2a:
+            int r5 = android.view.ViewConfiguration.getTapTimeout()
+            goto L3e
+        L2f:
+            int r2 = android.text.TextUtils.getCapsMode(r3, r0, r0)
+            int r2 = -r2
+            r4 = r2 & (-74)
+            r2 = r2 ^ (-74)
+            r2 = r2 | r4
+            int r4 = r4 + r2
+            short r2 = (short) r4
+            r4 = -101(0xffffffffffffff9b, float:NaN)
+            goto L2a
+        L3e:
+            int r5 = r5 >> 16
+            int r5 = -r5
+            r6 = r4 & r5
+            r7 = r6 ^ (-1)
+            r4 = r4 | r5
+            r4 = r4 & r7
+            int r5 = r6 << 1
+            int r5 = -r5
+            int r5 = -r5
+            r6 = r4 ^ r5
+            r4 = r4 & r5
+            int r4 = r4 << r1
+            int r6 = r6 + r4
+            r4 = 48
+            int r3 = android.text.TextUtils.indexOf(r3, r4, r0)
+            int r3 = -r3
+            r3 = r3 ^ (-1)
+            int r3 = -r3
+            r5 = r3 ^ (-82)
+            r3 = r3 & (-82)
+            int r3 = r3 << r1
+            int r5 = r5 + r3
+            r3 = r5 & (-1)
+            r5 = r5 | (-1)
+            int r3 = r3 + r5
+            int r5 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            int r5 = r5 + 65
+            int r5 = r5 - r1
+            int r5 = r5 - r1
+            int r7 = r5 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r7
+            int r5 = r5 % 2
+            byte r3 = (byte) r3
+            r5 = -1125762084(0xffffffffbce63bdc, float:-0.028104715)
+            int r7 = android.view.ViewConfiguration.getDoubleTapTimeout()
+            int r7 = r7 >> 16
+            int r7 = -r7
+            int r7 = -r7
+            r8 = r7 & r5
+            r5 = r5 ^ r7
+            r5 = r5 | r8
+            r7 = r8 ^ r5
+            r5 = r5 & r8
+            int r5 = r5 << r1
+            int r7 = r7 + r5
+            r5 = 1364036366(0x514d8b0e, float:5.5175078E10)
+            int r8 = android.view.ViewConfiguration.getJumpTapTimeout()
+            int r9 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r10 = r9 & 51
+            r9 = r9 ^ 51
+            r9 = r9 | r10
+            int r10 = r10 + r9
+            int r9 = r10 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r9
+            int r10 = r10 % 2
+            int r8 = r8 >> 16
+            int r8 = -r8
+            int r8 = -r8
+            r9 = r5 & r8
+            r5 = r5 ^ r8
+            r5 = r5 | r9
+            int r9 = r9 + r5
+            java.lang.String r2 = m11361c(r2, r6, r3, r7, r9)
+            java.lang.String r2 = r2.intern()
+            java.security.KeyPairGenerator r2 = java.security.KeyPairGenerator.getInstance(r2)
+            r3 = 2048(0x800, float:2.87E-42)
+            int r5 = br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint
+            r6 = r5 & 20
+            r5 = r5 | 20
+            int r6 = r6 + r5
+            r5 = r6 & (-1)
+            r6 = r6 | (-1)
+            int r5 = r5 + r6
+            int r6 = r5 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.value = r6
+            int r5 = r5 % 2
+            r6 = 40
+            if (r5 == 0) goto Lcb
+            r5 = 36
+            goto Lcd
+        Lcb:
+            r5 = 40
+        Lcd:
+            r7 = 4
+            r8 = 22
+            if (r5 == r6) goto Le9
+            r2.initialize(r3)
+            java.security.KeyPair r2 = r2.genKeyPair()
+            byte[] r3 = new byte[r8]
+            r3 = {x012a: FILL_ARRAY_DATA  , data: [1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1} // fill-array
+            int[] r4 = new int[r7]
+            r4 = {x013a: FILL_ARRAY_DATA  , data: [207, 22, 124, 22} // fill-array
+            r5 = 105(0x69, float:1.47E-43)
+            r5 = r4
+            r4 = 105(0x69, float:1.47E-43)
+            goto Lfa
+        Le9:
+            r2.initialize(r3)
+            java.security.KeyPair r2 = r2.genKeyPair()
+            byte[] r3 = new byte[r8]
+            r3 = {x0146: FILL_ARRAY_DATA  , data: [1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1} // fill-array
+            int[] r5 = new int[r7]
+            r5 = {x0156: FILL_ARRAY_DATA  , data: [207, 22, 124, 22} // fill-array
+        Lfa:
+            boolean r4 = android.telephony.PhoneNumberUtils.is12Key(r4)
+            r6 = r4 & (-2)
+            r4 = r4 ^ (-1)
+            r4 = r4 & r1
+            r7 = r6 ^ r4
+            r4 = r4 & r6
+            r4 = r4 | r7
+            java.lang.String r3 = m11359d(r3, r5, r4)
+            java.lang.String r3 = r3.intern()
+            kotlin.jvm.internal.Intrinsics.$r8$backportedMethods$utility$Double$1$hashCode(r2, r3)
+            int r3 = br.com.original.common.cryptography.AsymmetricCryptography.value
+            int r3 = r3 + 6
+            int r3 = r3 - r1
+            int r4 = r3 % 128
+            br.com.original.common.cryptography.AsymmetricCryptography.SuppressLint = r4
+            int r3 = r3 % 2
+            if (r3 != 0) goto L120
+            r0 = 1
+        L120:
+            if (r0 == r1) goto L123
+            return r2
+        L123:
+            r0 = 0
+            int r0 = r0.length     // Catch: java.lang.Throwable -> L126
+            return r2
+        L126:
+            r0 = move-exception
+            goto L129
+        L128:
+            throw r0
+        L129:
+            goto L128
+    }
+}
